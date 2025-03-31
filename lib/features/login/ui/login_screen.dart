@@ -1,0 +1,107 @@
+import 'package:circletraning/core/helpers/constants.dart';
+import 'package:circletraning/core/helpers/spacing.dart';
+import 'package:circletraning/core/theme/color_manager.dart';
+import 'package:circletraning/core/theme/styles.dart';
+import 'package:circletraning/core/widgets/custom_button.dart';
+import 'package:circletraning/core/widgets/svg_icon.dart';
+import 'package:circletraning/features/home/ui/widget/custom_text_field.dart';
+import 'package:circletraning/features/sign_up/ui/sign_up.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+class LoginScreen extends StatelessWidget {
+  static const routeName = '/login';
+  const LoginScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back,
+            size: 30.sp,
+          ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16.w),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Align(
+                alignment: Alignment.center,
+                child: SvgIcon(
+                  AppIcons.logoAndNameIcon,
+                  height: 120.h,
+                  width: 134.w,
+                ),
+              ),
+              verticalSpace(64),
+              Text(
+                'hey'.tr(),
+                style: TextStyles.font28MadaRegularGray,
+              ),
+              verticalSpace(8),
+              Text(
+                'sign_in_now'.tr(),
+                style: TextStyles.font14MadaRegularBlack
+                    .copyWith(color: ColorManger.gray),
+              ),
+              verticalSpace(24),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12.r),
+                    color: ColorManger.grayLight),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        SvgIcon(
+                          AppIcons.flagIcon,
+                          width: 48,
+                          height: 32,
+                        ),
+                        horizontalSpace(12),
+                        Text(
+                          'egypt'.tr(),
+                          style: TextStyles.font14MadaRegularBlack,
+                        ),
+                      ],
+                    ),
+                    const Icon(Icons.keyboard_arrow_down,
+                        color: ColorManger.red)
+                  ],
+                ),
+              ),
+              verticalSpace(16),
+              CustomTextField(
+                hintText: 'phone_number'.tr(),
+                fillColor: false,
+                icon: Padding(
+                  padding: EdgeInsets.all(12.sp),
+                  child: SvgIcon(AppIcons.phoneIcon),
+                ),
+              ),
+              verticalSpace(24),
+              CustomButton(
+                  title: 'in'.tr(),
+                  onTap: () {
+                    Navigator.pushNamed(context, SignUp.routeName);
+                    // defaultBottomSheet(context,
+                    //     child: const LoginBottomSheet());
+                  }),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

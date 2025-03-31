@@ -1,0 +1,32 @@
+import 'package:circletraning/core/theme/color_manager.dart';
+import 'package:circletraning/core/widgets/svg_icon.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+class ProductIcons extends StatelessWidget {
+  final Function()? onTap;
+  final Color? color;
+  final String icon;
+  const ProductIcons({super.key, this.onTap, this.color, required this.icon});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: 32.w,
+        height: 32.h,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: color ?? ColorManger.white,
+        ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 7.w, vertical: 7.h),
+          child: SvgIcon(
+            icon,
+          ),
+        ),
+      ),
+    );
+  }
+}

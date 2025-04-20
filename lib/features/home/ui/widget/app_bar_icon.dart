@@ -7,10 +7,12 @@ import '../../../../core/widgets/svg_icon.dart';
 
 class AppBarIcon extends StatelessWidget {
   final String icon;
+  final int? text;
 
   const AppBarIcon({
     super.key,
     required this.icon,
+    this.text,
   });
 
   @override
@@ -27,25 +29,27 @@ class AppBarIcon extends StatelessWidget {
             alignment: Alignment.center,
             child: SvgIcon(icon),
           ),
-          Positioned(
-              right: 5.w,
-              top: 2.h,
-              child: Container(
-                decoration: BoxDecoration(
-                  border: Border.all(color: ColorManger.white, width: 1),
-                  color: ColorManger.red,
-                  borderRadius: BorderRadius.circular(50.r),
-                ),
-                child: Center(
-                    child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 4.w),
-                  child: Text(
-                    '95',
-                    style: TextStyles.font10MadaRegularBlack
-                        .copyWith(color: ColorManger.white),
-                  ),
-                )),
-              ))
+          text != null && text != 0
+              ? Positioned(
+                  right: 5.w,
+                  top: 2.h,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(color: ColorManger.white, width: 1),
+                      color: ColorManger.red,
+                      borderRadius: BorderRadius.circular(50.r),
+                    ),
+                    child: Center(
+                        child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 4.w),
+                      child: Text(
+                        text!.toString(),
+                        style: TextStyles.font10MadaRegularBlack
+                            .copyWith(color: ColorManger.white),
+                      ),
+                    )),
+                  ))
+              : const SizedBox(),
         ],
       ),
     );

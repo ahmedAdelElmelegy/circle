@@ -2,10 +2,8 @@ import 'package:circletraning/core/helpers/constants.dart';
 import 'package:circletraning/core/helpers/spacing.dart';
 import 'package:circletraning/core/theme/color_manager.dart';
 import 'package:circletraning/core/theme/styles.dart';
-import 'package:circletraning/core/widgets/custom_button.dart';
 import 'package:circletraning/core/widgets/svg_icon.dart';
-import 'package:circletraning/features/home/ui/widget/custom_text_field.dart';
-import 'package:circletraning/features/sign_up/ui/sign_up.dart';
+import 'package:circletraning/features/login/ui/widget/login_form.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -82,22 +80,7 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               verticalSpace(16),
-              CustomTextField(
-                hintText: 'phone_number'.tr(),
-                fillColor: false,
-                icon: Padding(
-                  padding: EdgeInsets.all(12.sp),
-                  child: SvgIcon(AppIcons.phoneIcon),
-                ),
-              ),
-              verticalSpace(24),
-              CustomButton(
-                  title: 'in'.tr(),
-                  onTap: () {
-                    Navigator.pushNamed(context, SignUp.routeName);
-                    // defaultBottomSheet(context,
-                    //     child: const LoginBottomSheet());
-                  }),
+              const LoginForm(),
             ],
           ),
         ),

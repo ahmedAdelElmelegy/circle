@@ -1,11 +1,11 @@
 import 'package:circletraning/core/theme/color_manager.dart';
 import 'package:circletraning/core/theme/styles.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProductItemInCategory extends StatelessWidget {
-  const ProductItemInCategory({super.key});
+  final String title;
+  const ProductItemInCategory({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +17,9 @@ class ProductItemInCategory extends StatelessWidget {
         color: ColorManger.grayLight,
       ),
       child: Text(
-        'meat_and_poultry',
+        title,
         style: TextStyles.font12MadaRegularBlack,
-      ).tr(),
+      ),
     );
   }
 }

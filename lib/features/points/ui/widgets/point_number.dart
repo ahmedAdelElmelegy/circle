@@ -8,8 +8,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PointNumber extends StatelessWidget {
+  final String pointNumber;
   const PointNumber({
     super.key,
+    required this.pointNumber,
   });
 
   @override
@@ -43,7 +45,7 @@ class PointNumber extends StatelessWidget {
               ),
             ],
           ),
-          Text('130',
+          Text(pointNumber,
               style: TextStyles.font24MadaSemiBoldRed.copyWith(
                 color: ColorManger.black,
                 fontSize: 60.sp,

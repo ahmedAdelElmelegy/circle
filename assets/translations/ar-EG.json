@@ -114,6 +114,7 @@
 "you are not logged in":"ليس لديك حساب",
 "minites":"د",
 "Our_branches":"الفروع الخاصة بنا",
+"branchs":"الفروع",
 "branch1":"فرع شارع الجمهورية",
 "branch2":"فرع شارع النصر",
 "branch3":"فرع شارع الجيش",
@@ -123,6 +124,27 @@
 "my_name":"الاسم",
 "my_email":"البريد الالكتروني",
 "my_phone":"رقم الجوال",
+"no_notes":"لا يوجد ملاحظات",
 "address_message":"عنوان الرسالة" ,
-"Ahmed_Adel":"احمد عادل"
+"Ahmed_Adel":"احمد عادل",
+"phone_number_required":"رقم الجوال مطلوب",
+"my_location":"موقعي",
+"arrive_address":"عنوان التوصيل",
+"search_about_city" :"ابحث عن المدينة",
+"please_select_your_location":"من فضلك اختر موقعك",
+"no_address_found":"لم يتم العثور على عنوان",
+
+"first_name_required":"الاسم الاول مطلوب",
+"last_name_required":"الاسم الاخير مطلوب",
+"city_required":"المدينة مطلوبة",
+"sign_up_successfully":"تم التسجيل بنجاح",
+
+"update_profile_success":"تم التحديث بنجاح",
+"please_login_first":"من فضلك قم بتسجيل الدخول اولا",
+"contact_us_successfully":"تم التواصل معنا بنجاح",
+"product add to favorite successfully":"تم اضافة المنتج الي المفضلة بنجاح",
+"cart_is_empty":"عربة التسوق فارغة",
+"looks_like_you_dont_have_anything_in_your_cart":"يبدو ان ليس لديك اي شيء في عربة التسوق",
+"looks_like_you_dont_have_anything_in_your_favorite":"يبدو ان ليس لديك اي شيء في المفضلة",
+"favorite_is_empty":"المفضلة فارغة"
 }

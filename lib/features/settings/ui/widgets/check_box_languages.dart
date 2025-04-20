@@ -1,4 +1,5 @@
 import 'package:circletraning/features/home/ui/widget/check_box_item.dart';
+import 'package:circletraning/main.dart';
 import 'package:flutter/material.dart';
 
 class CheckBoxLanguage extends StatefulWidget {
@@ -10,8 +11,13 @@ class CheckBoxLanguage extends StatefulWidget {
 
 class _CheckBoxLanguageState extends State<CheckBoxLanguage> {
   List<String> cityName = ['arabic', 'english'];
+  @override
+  void initState() {
+    _currentIndex = saveUserData.getLang() == 'ar' ? 0 : 1;
+    super.initState();
+  }
 
-  int _currentIndex = -1;
+  int? _currentIndex;
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +29,11 @@ class _CheckBoxLanguageState extends State<CheckBoxLanguage> {
                 setState(() {
                   _currentIndex = index;
                 });
+                if (index == 0) {
+                  saveUserData.saveLang('ar');
+                } else {
+                  saveUserData.saveLang('en');
+                }
               },
               child: CheckBoxItem(
                 cityName: cityName[index],

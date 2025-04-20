@@ -5,10 +5,17 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CategoryScreen extends StatelessWidget {
+class CategoryScreen extends StatefulWidget {
   static const routeName = '/category';
   const CategoryScreen({super.key});
 
+  @override
+  State<CategoryScreen> createState() => _CategoryScreenState();
+}
+
+class _CategoryScreenState extends State<CategoryScreen> {
+  int catId = 44;
+  int catInd = 0;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -32,12 +39,21 @@ class CategoryScreen extends StatelessWidget {
                     children: [
                       SizedBox(
                         width: 102.w,
-                        child: const CategoryListViewInCategory(),
+                        child: CategoryListViewInCategory(
+                          updateSubCategory: (id, catIndex) {
+                            setState(() {
+                              catId = id;
+                              catInd = catIndex;
+                            });
+                          },
+                        ),
                       ),
 
-                      const Expanded(
-                          child:
-                              ProductListViewInCategory()), // ✅ Wrap with `Expanded`
+                      Expanded(
+                          child: ProductListViewInCategory(
+                        catIndex: catInd,
+                        catId: catId,
+                      )), // ✅ Wrap with `Expanded`
                     ],
                   ),
                 ),

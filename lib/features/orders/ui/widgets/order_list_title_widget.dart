@@ -32,7 +32,7 @@ class OrderListTitleWidget extends StatelessWidget {
             ),
             verticalSpace(3),
             Text(
-              subtitle.tr(),
+              subtitle,
               style: TextStyles.font14MadaRegularBlack
                   .copyWith(fontWeight: FontWeight.w400),
             ),

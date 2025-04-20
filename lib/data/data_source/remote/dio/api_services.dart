@@ -69,6 +69,26 @@ class ApiService {
     }
   }
 
+  Future<Response> del(
+    String endpoint, {
+    data,
+    Map<String, dynamic>? queryParameters,
+  }) async {
+    try {
+      var response = await _dio.delete(
+        '$_baseUrl$endpoint',
+        queryParameters: queryParameters,
+      );
+      return response;
+    } on SocketException catch (e) {
+      throw SocketException(e.toString());
+    } on FormatException catch (_) {
+      throw const FormatException("Unable to process the data");
+    } catch (e) {
+      rethrow;
+    }
+  }
+
   void updateHeader({String? token}) {
     token = token ?? this.token;
     this.token = token;

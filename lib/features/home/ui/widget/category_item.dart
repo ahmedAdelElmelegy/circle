@@ -1,13 +1,14 @@
-import 'package:circletraning/core/helpers/constants.dart';
 import 'package:circletraning/core/helpers/spacing.dart';
 import 'package:circletraning/core/theme/color_manager.dart';
 import 'package:circletraning/core/theme/styles.dart';
-import 'package:easy_localization/easy_localization.dart';
+import 'package:circletraning/core/widgets/cached_network_image.dart';
+import 'package:circletraning/data/models/response/category_model/category_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CategoryItem extends StatelessWidget {
-  const CategoryItem({super.key});
+  final CategoryData categoryData;
+  const CategoryItem({super.key, required this.categoryData});
 
   @override
   Widget build(BuildContext context) {
@@ -27,21 +28,21 @@ class CategoryItem extends StatelessWidget {
                 borderRadius: BorderRadius.circular(8.r),
                 color: ColorManger.grayLight,
               ),
-              child: Image.asset(
-                Assets.pic2,
-                width: 64.w,
-                height: 64.h,
-              ),
+              child: SizedBox(
+                  width: 64.w,
+                  height: 64.h,
+                  child: CachedImage(image: categoryData.image!)),
             ),
           ),
           verticalSpace(10),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 8.w),
             child: Text(
-              'category_item',
+              categoryData.title!,
+              maxLines: 2,
               style: TextStyles.font12MadaRegularBlack,
               textAlign: TextAlign.center,
-            ).tr(),
+            ),
           )
         ],
       ),

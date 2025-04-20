@@ -1,9 +1,12 @@
 import 'package:circletraning/core/helpers/app_method.dart';
 import 'package:circletraning/core/helpers/constants.dart';
+import 'package:circletraning/core/helpers/extention.dart';
 import 'package:circletraning/core/helpers/spacing.dart';
 import 'package:circletraning/core/theme/color_manager.dart';
 import 'package:circletraning/core/theme/styles.dart';
+import 'package:circletraning/core/widgets/cached_network_image.dart';
 import 'package:circletraning/core/widgets/svg_icon.dart';
+import 'package:circletraning/data/models/response/product_model/product_model_data.dart';
 import 'package:circletraning/features/cart/ui/cart_screen.dart';
 import 'package:circletraning/features/product_details/ui/widgets/price_product_detailes.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -11,8 +14,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProductDetailScreen extends StatelessWidget {
+  final ProductModelData product;
   static const routeName = '/product-detail-screen';
-  const ProductDetailScreen({super.key});
+  const ProductDetailScreen({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -23,15 +27,19 @@ class ProductDetailScreen extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
             child: Column(
               children: [
-                Image.asset(
-                  Assets.productDetails,
+                SizedBox(
+                  width: 343.w,
+                  height: 234.h,
+                  child: CachedImage(
+                    image: product.image!,
+                  ),
                 ),
                 verticalSpace(12),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'meat_and_poultry'.tr(),
+                      product.title!,
                       style: TextStyles.font18MadaSemiBoldBlack
                           .copyWith(color: ColorManger.primary),
                     ),
@@ -39,12 +47,17 @@ class ProductDetailScreen extends StatelessWidget {
                   ],
                 ),
                 verticalSpace(12),
-                Text(
-                  'product_description'.tr(),
-                  style: TextStyles.font12MadaRegularGray,
+                SizedBox(
+                  height: 150.h,
+                  child: Text(
+                    product.details!,
+                    style: TextStyles.font12MadaRegularGray,
+                  ),
                 ),
                 verticalSpace(12),
-                const PriceProductDetails()
+                PriceProductDetails(
+                  price: product.price.toString(),
+                )
               ],
             ),
           ),
@@ -52,7 +65,7 @@ class ProductDetailScreen extends StatelessWidget {
         bottomSheet: BottomSheetWidget(
           isCart: true,
           onTap: () {
-            Navigator.pushNamed(context, CartScreen.routeName);
+            push(const CartScreen());
           },
           totalPrice: 250,
         ));
@@ -100,7 +113,7 @@ class BottomSheetWidget extends StatelessWidget {
                 ),
                 horizontalSpace(4),
                 Text(
-                  'price'.tr(),
+                  totalPrice.toString(),
                   style: TextStyles.font18MadaSemiBoldBlack,
                 ),
                 horizontalSpace(4.5),

@@ -1,10 +1,20 @@
+import 'package:circletraning/core/widgets/custom_error_widget.dart';
+import 'package:circletraning/core/widgets/loading_widget.dart';
+import 'package:circletraning/data/provider/sub_category_provider.dart';
 import 'package:circletraning/features/products/ui/widgets/item_of_category_product.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
 class ListOfCategoryItem extends StatefulWidget {
+  final int catId;
+  final int subIndex;
+  final void Function(int subCategoryId)? onSubCategoryTap;
   const ListOfCategoryItem({
     super.key,
+    required this.catId,
+    required this.subIndex,
+    this.onSubCategoryTap,
   });
 
   @override
@@ -12,24 +22,60 @@ class ListOfCategoryItem extends StatefulWidget {
 }
 
 class _ListOfCategoryItemState extends State<ListOfCategoryItem> {
-  int _currentIndex = -1;
+  int _currentIndex = 0;
+  @override
+  void initState() {
+    _currentIndex = widget.subIndex;
+    updateSubCategory(widget.catId);
+    super.initState();
+  }
+
+  @override
+  void didUpdateWidget(covariant ListOfCategoryItem oldWidget) {
+    if (oldWidget.catId != widget.catId) {
+      updateSubCategory(widget.catId);
+    }
+    super.didUpdateWidget(oldWidget);
+  }
+
+  void updateSubCategory(int id) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Provider.of<SubCategoryProvider>(context, listen: false)
+          .getsubCategory(id);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 56.h,
-      child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index) => GestureDetector(
-                onTap: () {
-                  setState(() {
-                    _currentIndex = index;
-                  });
-                },
-                child: ItemOfCategoryProduct(
-                  isActive: _currentIndex == index,
-                ),
-              ),
-          itemCount: 10),
+      child: Consumer<SubCategoryProvider>(builder: (context, provider, child) {
+        if (provider.isFailure) {
+          return CustomErrorWidget(
+              errMessage: provider.serverFailure!.errMessage);
+        }
+
+        return ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (context, index) => provider.isLoading
+                ? LoadingWidget(
+                    width: 100.w,
+                  )
+                : GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        _currentIndex = index;
+                      });
+                      widget.onSubCategoryTap!(
+                          provider.subCategoryList[index].id!);
+                    },
+                    child: ItemOfCategoryProduct(
+                      subcategory: provider.subCategoryList[index],
+                      isActive: _currentIndex == index,
+                    ),
+                  ),
+            itemCount: provider.subCategoryList.length);
+      }),
     );
   }
 }

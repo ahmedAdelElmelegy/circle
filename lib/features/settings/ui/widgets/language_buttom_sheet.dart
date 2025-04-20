@@ -1,6 +1,8 @@
+import 'package:circletraning/core/helpers/extention.dart';
 import 'package:circletraning/core/helpers/spacing.dart';
 import 'package:circletraning/core/widgets/custom_button.dart';
 import 'package:circletraning/core/widgets/custom_title_bottom_sheet.dart';
+import 'package:circletraning/features/loca.dart';
 import 'package:circletraning/features/settings/ui/widgets/check_box_languages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -29,7 +31,10 @@ class LanguageButtomSheet extends StatelessWidget {
             verticalSpace(16),
             CustomButton(
               title: 'confirm',
-              onTap: () {},
+              onTap: () {
+                LoclizationCheck.changeLang(context);
+                pop();
+              },
             )
           ],
         ),

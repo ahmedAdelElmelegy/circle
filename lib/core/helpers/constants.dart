@@ -13,6 +13,8 @@ class Assets {
   static String profile = 'assets/images/profile.jpg';
   static String qrcode = 'assets/images/logo_init.png';
   static String logoInit = 'assets/images/Logo_init.png';
+  static String emptyCart = 'assets/images/empty_cart.png';
+  static String emptyFavrite = 'assets/images/empty_favorite.png';
 }
 
 class AppIcons {
@@ -86,4 +88,9 @@ class AppIcons {
   static String clock = 'assets/icons/clock.svg';
   static String copy = 'assets/icons/copy.svg';
   static String name = 'assets/icons/name.svg';
+  static String check = 'assets/icons/check.svg';
+  static String myLocation = 'assets/icons/my_location.svg';
+  static String singleCheck = 'assets/icons/single_check.svg';
+  static String getLocation = 'assets/icons/getLocation.png';
+  static String login = 'assets/icons/login.svg';
 }

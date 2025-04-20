@@ -5,6 +5,7 @@ import 'package:circletraning/core/theme/color_manager.dart';
 import 'package:circletraning/core/theme/styles.dart';
 
 import 'package:circletraning/core/widgets/svg_icon.dart';
+import 'package:circletraning/data/models/response/order_model/order_data.dart';
 import 'package:circletraning/data/provider/order_provider.dart';
 import 'package:circletraning/features/orders/ui/widgets/order_detail_screen.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -13,14 +14,19 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
 class OrderItem extends StatelessWidget {
+  final OrderData orderData;
+  final OrderProvider orderProvider;
   const OrderItem({
     super.key,
+    required this.orderData,
+    required this.orderProvider,
   });
 
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<OrderProvider>(context);
     return Container(
+      margin: EdgeInsets.only(bottom: 16.h),
       padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 16.h),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16.r),
@@ -34,13 +40,15 @@ class OrderItem extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'num'.tr(),
+                  '#${orderData.id}',
                   style: TextStyles.font18MadaSemiBoldBlack
                       .copyWith(color: ColorManger.red),
                 ),
                 GestureDetector(
                   onTap: () {
-                    push(const OrderDetailScreen());
+                    push(OrderDetailScreen(
+                      orderData: orderData,
+                    ));
                   },
                   child: Text('details'.tr(),
                       style: TextStyles.font14MadaRegularBlack
@@ -58,7 +66,8 @@ class OrderItem extends StatelessWidget {
                 children: [
                   SvgIcon(AppIcons.calenderIcon, width: 20.w, height: 20.h),
                   horizontalSpace(8),
-                  Text('date'.tr(), style: TextStyles.font14MadaRegularBlack),
+                  Text(orderData.date.toString(),
+                      style: TextStyles.font14MadaRegularBlack),
                 ],
               ),
               Row(
@@ -69,7 +78,8 @@ class OrderItem extends StatelessWidget {
                     height: 20.h,
                   ),
                   horizontalSpace(8),
-                  Text('time'.tr(), style: TextStyles.font14MadaRegularBlack),
+                  Text(orderData.time.toString(),
+                      style: TextStyles.font14MadaRegularBlack),
                 ],
               ),
             ],
@@ -82,7 +92,8 @@ class OrderItem extends StatelessWidget {
                 color: ColorManger.gray,
               ),
               horizontalSpace(8),
-              Text('address'.tr(), style: TextStyles.font14MadaRegularBlack),
+              Text(orderData.address.toString(),
+                  style: TextStyles.font14MadaRegularBlack),
             ],
           ),
           Visibility(

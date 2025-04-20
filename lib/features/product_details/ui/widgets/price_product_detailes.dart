@@ -8,8 +8,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PriceProductDetails extends StatelessWidget {
+  final String price;
   const PriceProductDetails({
     super.key,
+    required this.price,
   });
 
   @override
@@ -44,7 +46,7 @@ class PriceProductDetails extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      'price'.tr(),
+                      price,
                       style: TextStyles.font24MadaSemiBoldRed,
                     ),
                     horizontalSpace(9),

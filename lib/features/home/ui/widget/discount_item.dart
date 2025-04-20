@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DiscountItem extends StatelessWidget {
-  const DiscountItem({super.key});
+  final String offerValue;
+  const DiscountItem({super.key, required this.offerValue});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class DiscountItem extends StatelessWidget {
         ),
         child: Center(
           child: Text(
-            '15%',
+            '$offerValue%',
             style: TextStyles.font12MadaRegularWhite,
           ),
         ));

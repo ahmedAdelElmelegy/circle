@@ -1,9 +1,10 @@
+import 'package:circletraning/core/helpers/extention.dart';
 import 'package:circletraning/core/helpers/spacing.dart';
 import 'package:circletraning/data/provider/home_provider.dart';
 import 'package:circletraning/features/home/ui/widget/category_grid_view.dart';
 import 'package:circletraning/features/home/ui/widget/custom_app_bar.dart';
 import 'package:circletraning/features/home/ui/widget/picture_swiper.dart';
-import 'package:circletraning/features/home/ui/widget/product_grid_view.dart';
+import 'package:circletraning/features/home/ui/widget/latest_product_grid_view.dart';
 import 'package:circletraning/features/home/ui/widget/row_of_home.dart';
 import 'package:circletraning/features/home/ui/widget/search_and_chose_city.dart';
 import 'package:circletraning/features/products/ui/product_screen.dart';
@@ -42,11 +43,11 @@ class HomeScreen extends StatelessWidget {
                   RowOfHome(
                     text: 'latest_products',
                     onTap: () {
-                      Navigator.pushNamed(context, ProductScreen.routeName);
+                      push(const ProductScreen(index: 0, subIndex: 0));
                     },
                   ),
                   verticalSpace(12),
-                  const ProductGridView(),
+                  const LatestProductGridView()
                 ],
               ),
             ),

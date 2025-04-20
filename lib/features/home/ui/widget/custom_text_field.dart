@@ -13,6 +13,10 @@ class CustomTextField extends StatelessWidget {
   final bool? fillColor;
   final double? borderRadius;
   final int? maxline;
+  final Key? formKey;
+  final bool? readonly;
+  final void Function()? onTap;
+  final String? Function(String?)? validator;
   const CustomTextField(
       {super.key,
       required this.hintText,
@@ -21,39 +25,48 @@ class CustomTextField extends StatelessWidget {
       this.icon,
       this.fillColor,
       this.borderRadius,
-      this.maxline});
+      this.maxline,
+      this.formKey,
+      this.validator,
+      this.readonly,
+      this.onTap});
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      maxLines: maxline ?? 1,
-      onChanged: onChanged,
-      controller: controller,
-      decoration: InputDecoration(
-        contentPadding: fillColor == false
-            ? EdgeInsets.zero
-            : EdgeInsets.symmetric(vertical: 8.h, horizontal: 9.w),
-        hintText: hintText.tr(),
-        hintStyle: TextStyles.font12MadaRegularGray,
-        filled: fillColor ?? true,
-        prefixIcon: icon ??
-            const Icon(
-              Icons.search,
-              color: ColorManger.red,
-            ),
-        border: outLineBorder(),
-        enabledBorder: outLineBorder(),
-        focusedBorder: outLineBorder(),
-        fillColor: ColorManger.grayLight,
+    return Form(
+      key: formKey,
+      child: TextFormField(
+        readOnly: readonly ?? false,
+        onTap: onTap,
+        validator: validator,
+        maxLines: maxline ?? 1,
+        onChanged: onChanged,
+        controller: controller,
+        decoration: InputDecoration(
+          contentPadding: fillColor == false
+              ? EdgeInsets.zero
+              : EdgeInsets.symmetric(vertical: 8.h, horizontal: 9.w),
+          hintText: hintText.tr(),
+          hintStyle: TextStyles.font12MadaRegularGray,
+          filled: fillColor ?? true,
+          prefixIcon: icon ??
+              const Icon(
+                Icons.search,
+                color: ColorManger.red,
+              ),
+          border: outLineBorder(ColorManger.grayLight),
+          enabledBorder: outLineBorder(ColorManger.grayLight),
+          focusedBorder: outLineBorder(ColorManger.red),
+          fillColor: ColorManger.grayLight,
+        ),
       ),
     );
   }
 
-  OutlineInputBorder outLineBorder() {
+  OutlineInputBorder outLineBorder(Color color) {
     return OutlineInputBorder(
         borderRadius: BorderRadius.circular(borderRadius ?? 16.r),
-        borderSide: fillColor == false
-            ? const BorderSide(color: ColorManger.grayLight)
-            : BorderSide.none);
+        borderSide:
+            fillColor == false ? BorderSide(color: color) : BorderSide.none);
   }
 }

@@ -1,8 +1,10 @@
 import 'package:circletraning/core/helpers/app_method.dart';
+import 'package:circletraning/core/helpers/extention.dart';
 import 'package:circletraning/core/helpers/spacing.dart';
 import 'package:circletraning/features/home/ui/widget/chose_city.dart';
 import 'package:circletraning/features/home/ui/widget/chose_city_bottom_sheet.dart';
 import 'package:circletraning/features/home/ui/widget/custom_text_field.dart';
+import 'package:circletraning/features/products/ui/product_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -22,8 +24,12 @@ class SearchAndChoseCity extends StatelessWidget {
               },
               child: const ChoseCity()),
           horizontalSpace(10),
-          const Expanded(
+          Expanded(
             child: CustomTextField(
+              readonly: true,
+              onTap: () {
+                push(const ProductScreen(index: 0, subIndex: 0));
+              },
               hintText: 'search',
             ),
           ),

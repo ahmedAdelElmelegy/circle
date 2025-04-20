@@ -16,4 +16,6 @@ class AppURL {
   static const String myPoints = 'user/profile/pointsHistory';
   static const String updateProfile = 'user/profile/updateProfile';
   static const String contactUs = 'contact-us';
+  static const String payment = 'payment2/1';
+  static const String cancelOrder = 'user/orders/';
 }

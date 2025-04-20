@@ -1,12 +1,14 @@
 import 'package:circletraning/core/theme/color_manager.dart';
 import 'package:circletraning/core/theme/styles.dart';
-import 'package:easy_localization/easy_localization.dart';
+import 'package:circletraning/data/models/response/sub_category_model/sub_category_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ItemOfCategoryProduct extends StatelessWidget {
   final bool? isActive;
-  const ItemOfCategoryProduct({super.key, this.isActive = false});
+  final SubCategoryData subcategory;
+  const ItemOfCategoryProduct(
+      {super.key, this.isActive = false, required this.subcategory});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,7 @@ class ItemOfCategoryProduct extends StatelessWidget {
           borderRadius: BorderRadius.circular(8.r),
         ),
         child: Text(
-          'meat_and_poultry'.tr(),
+          subcategory.title!,
           textAlign: TextAlign.center,
           style: isActive == true
               ? TextStyles.font12MadaRegularWhite

@@ -1,13 +1,15 @@
-import 'package:circletraning/core/helpers/constants.dart';
 import 'package:circletraning/core/theme/color_manager.dart';
 import 'package:circletraning/core/theme/styles.dart';
-import 'package:easy_localization/easy_localization.dart';
+import 'package:circletraning/core/widgets/cached_network_image.dart';
+import 'package:circletraning/data/models/response/category_model/category_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CategoryItemInProductScreen extends StatelessWidget {
   final bool? isActive;
-  const CategoryItemInProductScreen({super.key, this.isActive = false});
+  final CategoryData category;
+  const CategoryItemInProductScreen(
+      {super.key, this.isActive = false, required this.category});
 
   @override
   Widget build(BuildContext context) {
@@ -34,9 +36,13 @@ class CategoryItemInProductScreen extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Image.asset(Assets.pic2, width: 24.w, height: 24.h),
+                SizedBox(
+                  width: 24.w,
+                  height: 24.h,
+                  child: CachedImage(image: category.image!),
+                ),
                 Text(
-                  'category_item'.tr(),
+                  category.title!,
                   style: TextStyles.font12MadaRegularBlack,
                 )
               ],

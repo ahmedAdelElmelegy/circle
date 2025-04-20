@@ -1,13 +1,15 @@
 import 'package:circletraning/core/helpers/spacing.dart';
 import 'package:circletraning/core/theme/color_manager.dart';
 import 'package:circletraning/core/theme/styles.dart';
+import 'package:circletraning/data/models/response/order_model/order_data.dart';
 import 'package:circletraning/features/orders/ui/widgets/product_list_title_widget.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OrderProductSection extends StatelessWidget {
-  const OrderProductSection({super.key});
+  final OrderData orderData;
+  const OrderProductSection({super.key, required this.orderData});
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +20,7 @@ class OrderProductSection extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 'Products'.tr(),
@@ -27,10 +30,12 @@ class OrderProductSection extends StatelessWidget {
               verticalSpace(12),
               Column(
                 children: List.generate(
-                  2,
+                  orderData.details!.length,
                   (index) => Padding(
                     padding: EdgeInsets.only(bottom: 12.h),
-                    child: const ProductListTitleWidget(),
+                    child: ProductListTitleWidget(
+                      orderDetail: orderData.details![index],
+                    ),
                   ),
                 ),
               ),
@@ -49,7 +54,7 @@ class OrderProductSection extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        '560',
+                        orderData.deliveryPrice.toString(),
                         style: TextStyles.font16MadaSemiBoldBlack,
                       ),
                       horizontalSpace(4),
@@ -72,7 +77,7 @@ class OrderProductSection extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        '560',
+                        '${orderData.grandTotal}',
                         style: TextStyles.font18MadaSemiBoldBlack
                             .copyWith(color: ColorManger.primary),
                       ),

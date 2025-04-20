@@ -9,10 +9,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PointListTitle extends StatelessWidget {
   final String subTitle;
+  final String points;
 
   const PointListTitle({
     super.key,
     required this.subTitle,
+    required this.points,
   });
 
   @override
@@ -39,7 +41,7 @@ class PointListTitle extends StatelessWidget {
             ],
           ),
           const Spacer(),
-          Text('+ 10',
+          Text('+ $points',
               style: TextStyles.font18MadaSemiBoldBlack.copyWith(
                 color: ColorManger.red,
               ))

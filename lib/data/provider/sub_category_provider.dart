@@ -1,4 +1,4 @@
-import 'package:circletraning/data/data_source/remote/exception/api_error_handeler.dart';
+import 'package:circletraning/core/error/failure.dart';
 import 'package:circletraning/data/models/response/base/api_response.dart';
 import 'package:circletraning/data/models/response/sub_category_model/sub_category_data.dart';
 import 'package:circletraning/data/models/response/sub_category_model/sub_category_model.dart';
@@ -11,7 +11,7 @@ class SubCategoryProvider with ChangeNotifier {
   bool isFailure = false;
   List<SubCategoryData> subCategoryList = [];
   final SubCategoryRepo subCategoryRepo;
-  ApiErrorHandler? apiErrorHandler;
+  ServerFailure? serverFailure;
 
   SubCategoryProvider(this.subCategoryRepo);
 
@@ -19,17 +19,19 @@ class SubCategoryProvider with ChangeNotifier {
     isLoading = true;
     notifyListeners();
     ApiResponse apiResponse = await subCategoryRepo.getSubCategory(id);
-    if (apiResponse.response!.statusCode == 200 ||
+    if (apiResponse.response != null &&
+        apiResponse.response!.statusCode == 200 &&
         apiResponse.response!.data != null) {
       _subCategoryModel = SubCategoryModel.fromJson(apiResponse.response!.data);
-      subCategoryList.clear();
 
       if (_subCategoryModel!.code == 200) {
+        subCategoryList.clear();
         subCategoryList.addAll(_subCategoryModel!.data!);
       }
     } else {
       isFailure = true;
-      apiErrorHandler = ApiErrorHandler.getMessage(apiResponse.error);
+      serverFailure = ServerFailure(apiResponse.error);
+      notifyListeners();
     }
     isLoading = false;
     notifyListeners();

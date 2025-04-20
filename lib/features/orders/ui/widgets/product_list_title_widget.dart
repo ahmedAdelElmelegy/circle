@@ -1,20 +1,27 @@
 import 'package:circletraning/core/helpers/spacing.dart';
 import 'package:circletraning/core/theme/color_manager.dart';
 import 'package:circletraning/core/theme/styles.dart';
+import 'package:circletraning/data/models/response/order_model/detail.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProductListTitleWidget extends StatelessWidget {
-  const ProductListTitleWidget({super.key});
+  final OrderDetail orderDetail;
+  const ProductListTitleWidget({super.key, required this.orderDetail});
 
   @override
   Widget build(BuildContext context) {
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
-          'meat_and_poultry'.tr(),
-          style: TextStyles.font14MadaSemiBoldBlack,
+        SizedBox(
+          width: 200.w,
+          child: Text(
+            orderDetail.product!.title!,
+            style: TextStyles.font14MadaSemiBoldBlack,
+          ),
         ),
         Row(
           children: [
@@ -26,7 +33,7 @@ class ProductListTitleWidget extends StatelessWidget {
                 ),
                 horizontalSpace(4),
                 Text(
-                  '2',
+                  '${orderDetail.product!.weightUnit!}',
                   style: TextStyles.font14MadaSemiBoldBlack
                       .copyWith(color: ColorManger.gray),
                 ),
@@ -36,7 +43,7 @@ class ProductListTitleWidget extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  '560',
+                  '${orderDetail.product!.price!}',
                   style: TextStyles.font16MadaSemiBoldBlack,
                 ),
                 horizontalSpace(4),

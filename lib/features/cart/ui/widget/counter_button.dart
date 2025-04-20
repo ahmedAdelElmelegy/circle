@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class CounterButton extends StatelessWidget {
   final IconData icon;
   final Function()? onTap;
+
   const CounterButton({
     super.key,
     required this.icon,

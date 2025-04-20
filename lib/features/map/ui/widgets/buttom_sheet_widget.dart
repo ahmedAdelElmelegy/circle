@@ -8,7 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MapButtomSheet extends StatelessWidget {
-  const MapButtomSheet({super.key});
+  final List<Map<String, dynamic>> branches;
+  const MapButtomSheet({super.key, required this.branches});
 
   @override
   Widget build(BuildContext context) {
@@ -33,9 +34,11 @@ class MapButtomSheet extends StatelessWidget {
             ListView.builder(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                itemCount: 5,
+                itemCount: branches.length,
                 itemBuilder: (context, index) {
-                  return const BranshItem();
+                  return BranshItem(
+                    city: branches[index]['name'],
+                  );
                 }),
           ],
         ),
@@ -45,7 +48,8 @@ class MapButtomSheet extends StatelessWidget {
 }
 
 class BranshItem extends StatelessWidget {
-  const BranshItem({super.key});
+  final String city;
+  const BranshItem({super.key, required this.city});
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +67,7 @@ class BranshItem extends StatelessWidget {
               ),
               horizontalSpace(10),
               Text(
-                'branch1'.tr(),
+                city,
                 style: TextStyles.font14MadaRegularBlack,
               ),
             ],

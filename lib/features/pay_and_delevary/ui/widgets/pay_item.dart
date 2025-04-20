@@ -1,0 +1,42 @@
+import 'package:circletraning/core/helpers/spacing.dart';
+import 'package:circletraning/core/theme/styles.dart';
+import 'package:circletraning/core/widgets/svg_icon.dart';
+import 'package:circletraning/data/models/invoice_model.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+class PayItem extends StatelessWidget {
+  final InvoiceModel inviceItem;
+  const PayItem({super.key, required this.inviceItem});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Row(
+        children: [
+          SvgIcon(
+            inviceItem.icon,
+            width: 20.w,
+            height: 20.h,
+          ),
+          horizontalSpace(12),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                inviceItem.title.tr(),
+                style: TextStyles.font12MadaRegularGray,
+              ),
+              verticalSpace(4),
+              Text(
+                inviceItem.subtitle.tr(),
+                style: TextStyles.font14MadaRegularBlack,
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}

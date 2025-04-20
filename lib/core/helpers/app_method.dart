@@ -24,3 +24,12 @@ AppBar customAppBar(String title, BuildContext context) {
     ),
   );
 }
+
+AppBar customAppBarWithoutLeading(String title, BuildContext context) {
+  return AppBar(
+    title: Text(
+      title.tr(),
+      style: TextStyles.font18MadaSemiBoldBlack,
+    ),
+  );
+}

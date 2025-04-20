@@ -1,8 +1,9 @@
-import 'package:circletraning/data/data_source/remote/exception/api_error_handeler.dart';
+import 'package:circletraning/core/error/failure.dart';
 import 'package:circletraning/data/models/response/base/api_response.dart';
 import 'package:circletraning/data/models/response/category_model/category_data.dart';
 import 'package:circletraning/data/models/response/category_model/category_model.dart';
 import 'package:circletraning/data/repository/category_repo.dart';
+
 import 'package:flutter/material.dart';
 
 class CategoryProvider with ChangeNotifier {
@@ -11,14 +12,15 @@ class CategoryProvider with ChangeNotifier {
   bool isFailure = false;
   List<CategoryData> categoryList = [];
   final CategoryRepo categoryRepo;
-  ApiErrorHandler? apiErrorHandler;
+  ServerFailure? serverFailure;
   CategoryProvider(this.categoryRepo);
 
   Future<ApiResponse> getCategory() async {
     isLoading = true;
     notifyListeners();
     ApiResponse apiResponse = await categoryRepo.getCategory();
-    if (apiResponse.response!.statusCode == 200 ||
+    if (apiResponse.response != null &&
+        apiResponse.response!.statusCode == 200 &&
         apiResponse.response!.data != null) {
       _categoryModel = CategoryModel.fromJson(apiResponse.response!.data);
       if (_categoryModel!.code == 200) {
@@ -26,7 +28,10 @@ class CategoryProvider with ChangeNotifier {
       }
     } else {
       isFailure = true;
-      apiErrorHandler = ApiErrorHandler.getMessage(apiResponse.error);
+
+      serverFailure = ServerFailure(apiResponse.error);
+
+      notifyListeners();
     }
     isLoading = false;
     notifyListeners();

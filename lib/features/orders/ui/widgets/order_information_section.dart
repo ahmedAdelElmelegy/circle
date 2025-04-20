@@ -3,14 +3,17 @@ import 'package:circletraning/core/helpers/spacing.dart';
 import 'package:circletraning/core/theme/color_manager.dart';
 import 'package:circletraning/core/theme/styles.dart';
 import 'package:circletraning/core/widgets/svg_icon.dart';
+import 'package:circletraning/data/models/response/order_model/order_data.dart';
 import 'package:circletraning/features/orders/ui/widgets/order_list_title_widget.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OrderInformationSection extends StatelessWidget {
+  final OrderData orderData;
   const OrderInformationSection({
     super.key,
+    required this.orderData,
   });
 
   @override
@@ -27,7 +30,7 @@ class OrderInformationSection extends StatelessWidget {
               SvgIcon(AppIcons.idIcon),
               horizontalSpace(12),
               Text(
-                'num'.tr(),
+                '#${orderData.id}',
                 style: TextStyles.font18MadaSemiBoldBlack
                     .copyWith(color: ColorManger.red),
               ),
@@ -39,7 +42,7 @@ class OrderInformationSection extends StatelessWidget {
               SvgIcon(AppIcons.calenderIcon),
               horizontalSpace(12),
               Text(
-                'date'.tr(),
+                '${orderData.date}',
                 style: TextStyles.font14MadaSemiBoldBlack,
               ),
               horizontalSpace(8),
@@ -49,7 +52,7 @@ class OrderInformationSection extends StatelessWidget {
               ),
               horizontalSpace(8),
               Text(
-                'time'.tr(),
+                '${orderData.time}',
                 style: TextStyles.font14MadaSemiBoldBlack,
               ),
             ],
@@ -58,22 +61,22 @@ class OrderInformationSection extends StatelessWidget {
           OrderListTitleWidget(
               icon: AppIcons.restBranchIcon,
               title: 'branch',
-              subtitle: 'branch1'),
+              subtitle: 'branch1'.tr()),
           verticalSpace(20),
           OrderListTitleWidget(
               icon: AppIcons.locationIcon,
               title: 'delivery_address',
-              subtitle: 'branch1'),
+              subtitle: orderData.address!),
           verticalSpace(20),
           OrderListTitleWidget(
               icon: AppIcons.payIcon,
               title: 'payment_method',
-              subtitle: 'cash'),
+              subtitle: orderData.payType!),
           verticalSpace(20),
           OrderListTitleWidget(
               icon: AppIcons.notesIcon,
               title: 'notes',
-              subtitle: 'Bring fresh shrimp'),
+              subtitle: orderData.notes ?? 'no_notes'.tr()),
           verticalSpace(20),
         ],
       ),

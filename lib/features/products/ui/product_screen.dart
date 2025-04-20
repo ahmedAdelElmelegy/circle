@@ -2,17 +2,63 @@ import 'package:circletraning/core/helpers/constants.dart';
 import 'package:circletraning/core/helpers/spacing.dart';
 import 'package:circletraning/core/theme/styles.dart';
 import 'package:circletraning/core/widgets/svg_icon.dart';
+import 'package:circletraning/data/provider/category_provider.dart';
+import 'package:circletraning/data/provider/sub_category_provider.dart';
 import 'package:circletraning/features/home/ui/widget/custom_text_field.dart';
-import 'package:circletraning/features/home/ui/widget/product_grid_view.dart';
 import 'package:circletraning/features/products/ui/widgets/category_list_view_in_product_screen.dart';
 import 'package:circletraning/features/products/ui/widgets/list_of_category_item.dart';
+import 'package:circletraning/features/products/ui/widgets/product_grid_view.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
-class ProductScreen extends StatelessWidget {
+class ProductScreen extends StatefulWidget {
+  final int? index;
+  final int? subIndex;
   static const routeName = '/product-screen';
-  const ProductScreen({super.key});
+  const ProductScreen({super.key, this.index, this.subIndex});
+
+  @override
+  State<ProductScreen> createState() => _ProductScreenState();
+}
+
+class _ProductScreenState extends State<ProductScreen> {
+  int catId = 0;
+  int subCategoryId = 0;
+  String title = '';
+
+  @override
+  void didChangeDependencies() {
+    selectCategoryAndSubCategory();
+
+    super.didChangeDependencies();
+  }
+
+  void selectCategoryAndSubCategory() {
+    final categoryProvider =
+        Provider.of<CategoryProvider>(context, listen: false);
+    final subCategoryProvider =
+        Provider.of<SubCategoryProvider>(context, listen: false);
+
+    if (widget.index != null &&
+        widget.index! < categoryProvider.categoryList.length) {
+      catId = categoryProvider.categoryList[widget.index!].id ?? 0;
+
+      final subCategories =
+          categoryProvider.categoryList[widget.index!].subCategories;
+      if (subCategories != null && subCategories.isNotEmpty) {
+        subCategoryId = subCategories.last.id ?? 0;
+      }
+    }
+
+    if (widget.subIndex != null && widget.subIndex != 0) {
+      if (widget.subIndex! < subCategoryProvider.subCategoryList.length) {
+        subCategoryId =
+            subCategoryProvider.subCategoryList[widget.subIndex!].id ?? 0;
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,14 +79,41 @@ class ProductScreen extends StatelessWidget {
           children: [
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.w),
-              child: const CustomTextField(hintText: 'search'),
+              child: CustomTextField(
+                hintText: 'search',
+                onChanged: (value) {
+                  setState(() {
+                    title = value;
+                  });
+                },
+              ),
             ),
             verticalSpace(8),
-            const CategoryListViewInProductScreen(),
+            CategoryListViewInProductScreen(
+              index: widget.index ?? 0,
+              onCategoryTap: (cat, subCat) {
+                setState(() {
+                  catId = cat;
+                  subCategoryId = subCat;
+                });
+              },
+            ),
             verticalSpace(8),
-            const ListOfCategoryItem(),
+            ListOfCategoryItem(
+              onSubCategoryTap: (subCategoryId) {
+                setState(() {
+                  this.subCategoryId = subCategoryId;
+                });
+              },
+              subIndex: widget.subIndex ?? 0,
+              catId: catId,
+            ),
             verticalSpace(16),
-            const ProductGridView(),
+            ProductGridView(
+              catId: catId,
+              subCatId: subCategoryId,
+              title: title,
+            ),
           ],
         ),
       ),

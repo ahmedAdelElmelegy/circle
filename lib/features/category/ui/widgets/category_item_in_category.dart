@@ -1,14 +1,16 @@
-import 'package:circletraning/core/helpers/constants.dart';
 import 'package:circletraning/core/helpers/spacing.dart';
 import 'package:circletraning/core/theme/color_manager.dart';
 import 'package:circletraning/core/theme/styles.dart';
-import 'package:easy_localization/easy_localization.dart';
+import 'package:circletraning/core/widgets/cached_network_image.dart';
+import 'package:circletraning/data/models/response/category_model/category_data.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CategoryItemInCategory extends StatelessWidget {
   final bool? isSelected;
-  const CategoryItemInCategory({super.key, this.isSelected = false});
+  final CategoryData category;
+  const CategoryItemInCategory(
+      {super.key, this.isSelected = false, required this.category});
 
   @override
   Widget build(BuildContext context) {
@@ -32,20 +34,20 @@ class CategoryItemInCategory extends StatelessWidget {
               children: [
                 Padding(
                   padding: EdgeInsets.only(top: 8.h),
-                  child: Image.asset(
-                    Assets.pic2,
-                    width: 48.w,
-                    height: 48.h,
-                  ),
+                  child: SizedBox(
+                      width: 48.w,
+                      height: 48.h,
+                      child: CachedImage(image: category.image!)),
                 ),
                 verticalSpace(10),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 7.w),
                   child: Text(
-                    'category_item',
+                    category.title!,
+                    maxLines: 3,
                     style: TextStyles.font12MadaRegularBlack,
                     textAlign: TextAlign.center,
-                  ).tr(),
+                  ),
                 )
               ],
             ),

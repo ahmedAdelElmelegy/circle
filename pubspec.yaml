@@ -44,6 +44,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_google_places_hoc081098: ^2.0.0
+  flutter_native_splash: ^2.4.6
   flutter_screenutil: ^5.9.0
   flutter_svg: ^2.0.9
   fluttertoast: ^8.2.4
@@ -68,11 +69,11 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
-flutter_launcher_icons:
-  android: "launcher_icon"
-  image_path: "assets/images/Logo_init.png"
-  background_color: "#ffffff"
-  min_sdk_android: 21 # android min sdk min:16, default 21
+flutter_native_splash:
+  color: "#ffffff" # or your background color
+  image: assets/images/Logo_init.png # your real splash image
+  android: true
+  ios: true
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

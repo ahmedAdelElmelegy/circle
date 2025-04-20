@@ -18,15 +18,20 @@ class PicturesSwiper extends StatelessWidget {
       if (provider.isFailure) {
         return CustomErrorWidget(
             errMessage: provider.serverFailure!.errMessage);
+      } else if (provider.isLoading) {
+        return LoadingWidget(
+          width: double.infinity,
+          height: 171.5.h,
+        );
       }
       return SizedBox(
         height: 171.5.h,
         child: Swiper(
           autoplay: true,
           itemBuilder: (BuildContext context, int index) {
-            return provider.isLoading
-                ? const LoadingWidget()
-                : CachedImage(image: provider.sliderList[index].image!);
+            return ClipRRect(
+                borderRadius: BorderRadius.circular(16.r),
+                child: CachedImage(image: provider.sliderList[index].image!));
           },
           itemCount: provider.sliderList.length,
           viewportFraction: 0.87,

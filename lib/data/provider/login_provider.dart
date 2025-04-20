@@ -1,13 +1,13 @@
-import 'package:circletraning/core/di/injection.dart';
-import 'package:circletraning/core/helpers/extention.dart';
-import 'package:circletraning/data/models/body/login_response_body.dart';
-import 'package:circletraning/data/models/response/auth_model/auth_model.dart';
-import 'package:circletraning/data/models/response/base/api_response.dart';
-import 'package:circletraning/data/provider/sign_up_provider.dart';
-import 'package:circletraning/data/repository/login_repo.dart';
-import 'package:circletraning/data/repository/save_user_data.dart';
-import 'package:circletraning/features/main_screen.dart';
-import 'package:circletraning/features/sign_up/ui/sign_up.dart';
+import 'package:circle/core/di/injection.dart';
+import 'package:circle/core/helpers/extention.dart';
+import 'package:circle/data/models/body/login_response_body.dart';
+import 'package:circle/data/models/response/auth_model/auth_model.dart';
+import 'package:circle/data/models/response/base/api_response.dart';
+import 'package:circle/data/provider/sign_up_provider.dart';
+import 'package:circle/data/repository/login_repo.dart';
+import 'package:circle/data/repository/save_user_data.dart';
+import 'package:circle/features/main_screen.dart';
+import 'package:circle/features/sign_up/ui/sign_up.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 

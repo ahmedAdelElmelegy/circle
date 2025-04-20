@@ -1,5 +1,5 @@
-import 'package:circletraning/core/theme/color_manager.dart';
-import 'package:circletraning/core/theme/styles.dart';
+import 'package:circle/core/theme/color_manager.dart';
+import 'package:circle/core/theme/styles.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

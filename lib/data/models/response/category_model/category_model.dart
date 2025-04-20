@@ -1,4 +1,4 @@
-import 'package:circletraning/data/models/response/category_model/category_data.dart';
+import 'package:circle/data/models/response/category_model/category_data.dart';
 import 'package:equatable/equatable.dart';
 
 class CategoryModel extends Equatable {

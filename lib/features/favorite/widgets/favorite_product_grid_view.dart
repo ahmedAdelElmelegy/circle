@@ -1,8 +1,8 @@
-import 'package:circletraning/core/helpers/constants.dart';
-import 'package:circletraning/core/widgets/loading_widget.dart';
-import 'package:circletraning/data/provider/favorite_provider.dart';
-import 'package:circletraning/features/cart/ui/widget/empty_cart.dart';
-import 'package:circletraning/features/home/ui/widget/product_item.dart';
+import 'package:circle/core/helpers/constants.dart';
+import 'package:circle/core/widgets/loading_widget.dart';
+import 'package:circle/data/provider/favorite_provider.dart';
+import 'package:circle/features/cart/ui/widget/empty_cart.dart';
+import 'package:circle/features/home/ui/widget/product_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';

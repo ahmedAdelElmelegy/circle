@@ -1,10 +1,10 @@
-import 'package:circletraning/core/helpers/app_method.dart';
-import 'package:circletraning/core/helpers/spacing.dart';
-import 'package:circletraning/data/models/response/order_model/order_data.dart';
-import 'package:circletraning/data/provider/cancel_order_provider.dart';
-import 'package:circletraning/features/orders/ui/widgets/order_information_section.dart';
-import 'package:circletraning/features/orders/ui/widgets/order_product_section.dart';
-import 'package:circletraning/features/orders/ui/widgets/order_request_section.dart';
+import 'package:circle/core/helpers/app_method.dart';
+import 'package:circle/core/helpers/spacing.dart';
+import 'package:circle/data/models/response/order_model/order_data.dart';
+import 'package:circle/data/provider/cancel_order_provider.dart';
+import 'package:circle/features/orders/ui/widgets/order_information_section.dart';
+import 'package:circle/features/orders/ui/widgets/order_product_section.dart';
+import 'package:circle/features/orders/ui/widgets/order_request_section.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

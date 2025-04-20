@@ -1,9 +1,9 @@
-import 'package:circletraning/core/di/injection.dart';
-import 'package:circletraning/core/widgets/custom_error_widget.dart';
-import 'package:circletraning/core/widgets/loading_widget.dart';
-import 'package:circletraning/data/provider/latest_product_provider.dart';
-import 'package:circletraning/data/provider/shared_prefrence_provider.dart';
-import 'package:circletraning/features/home/ui/widget/product_item.dart';
+import 'package:circle/core/di/injection.dart';
+import 'package:circle/core/widgets/custom_error_widget.dart';
+import 'package:circle/core/widgets/loading_widget.dart';
+import 'package:circle/data/provider/latest_product_provider.dart';
+import 'package:circle/data/provider/shared_prefrence_provider.dart';
+import 'package:circle/features/home/ui/widget/product_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';

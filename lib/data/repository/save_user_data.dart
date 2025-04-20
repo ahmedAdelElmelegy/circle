@@ -1,11 +1,11 @@
 import 'dart:convert';
 
-import 'package:circletraning/core/helpers/extention.dart';
-import 'package:circletraning/core/utils/app_constants.dart';
-import 'package:circletraning/data/data_source/remote/dio/api_services.dart';
-import 'package:circletraning/data/models/response/auth_model/auth_model.dart';
-import 'package:circletraning/data/models/response/auth_model/user.dart';
-import 'package:circletraning/features/main_screen.dart';
+import 'package:circle/core/helpers/extention.dart';
+import 'package:circle/core/utils/app_constants.dart';
+import 'package:circle/data/data_source/remote/dio/api_services.dart';
+import 'package:circle/data/models/response/auth_model/auth_model.dart';
+import 'package:circle/data/models/response/auth_model/user.dart';
+import 'package:circle/features/main_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SaveUserData {

@@ -1,10 +1,10 @@
-import 'package:circletraning/core/helpers/app_method.dart';
-import 'package:circletraning/core/theme/color_manager.dart';
-import 'package:circletraning/core/widgets/custom_button.dart';
-import 'package:circletraning/data/provider/points_provider.dart';
-import 'package:circletraning/features/points/ui/widgets/invite_friend_bottom_sheet.dart';
-import 'package:circletraning/features/points/ui/widgets/point_list_view.dart';
-import 'package:circletraning/features/points/ui/widgets/point_number.dart';
+import 'package:circle/core/helpers/app_method.dart';
+import 'package:circle/core/theme/color_manager.dart';
+import 'package:circle/core/widgets/custom_button.dart';
+import 'package:circle/data/provider/points_provider.dart';
+import 'package:circle/features/points/ui/widgets/invite_friend_bottom_sheet.dart';
+import 'package:circle/features/points/ui/widgets/point_list_view.dart';
+import 'package:circle/features/points/ui/widgets/point_number.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

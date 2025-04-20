@@ -1,7 +1,7 @@
-import 'package:circletraning/core/di/injection.dart';
-import 'package:circletraning/core/widgets/custom_error_widget.dart';
-import 'package:circletraning/data/provider/order_provider.dart';
-import 'package:circletraning/features/orders/ui/widgets/order_item.dart';
+import 'package:circle/core/di/injection.dart';
+import 'package:circle/core/widgets/custom_error_widget.dart';
+import 'package:circle/data/provider/order_provider.dart';
+import 'package:circle/features/orders/ui/widgets/order_item.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

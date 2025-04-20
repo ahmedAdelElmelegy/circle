@@ -1,6 +1,6 @@
 import 'dart:io';
-import 'package:circletraning/core/utils/app_constants.dart';
-import 'package:circletraning/data/api_url/api_utls.dart';
+import 'package:circle/core/utils/app_constants.dart';
+import 'package:circle/data/api_url/api_utls.dart';
 import 'package:dio/dio.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

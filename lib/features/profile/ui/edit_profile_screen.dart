@@ -1,9 +1,9 @@
-// import 'package:circletraning/core/helpers/app_method.dart';
-// import 'package:circletraning/core/helpers/constants.dart';
-// import 'package:circletraning/core/theme/color_manager.dart';
-// import 'package:circletraning/core/widgets/custom_button.dart';
-// import 'package:circletraning/core/widgets/svg_icon.dart';
-// import 'package:circletraning/features/profile/ui/widgets/user_name_field.dart';
+// import 'package:circle/core/helpers/app_method.dart';
+// import 'package:circle/core/helpers/constants.dart';
+// import 'package:circle/core/theme/color_manager.dart';
+// import 'package:circle/core/widgets/custom_button.dart';
+// import 'package:circle/core/widgets/svg_icon.dart';
+// import 'package:circle/features/profile/ui/widgets/user_name_field.dart';
 // import 'package:flutter/material.dart';
 // import 'package:flutter_screenutil/flutter_screenutil.dart';
 

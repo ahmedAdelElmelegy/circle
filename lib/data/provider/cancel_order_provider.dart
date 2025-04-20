@@ -1,10 +1,10 @@
-import 'package:circletraning/core/di/injection.dart';
-import 'package:circletraning/core/error/failure.dart';
-import 'package:circletraning/core/helpers/extention.dart';
-import 'package:circletraning/data/models/response/base/api_response.dart';
-import 'package:circletraning/data/models/response/init_model.dart';
-import 'package:circletraning/data/provider/order_provider.dart';
-import 'package:circletraning/data/repository/cancel_order_repo.dart';
+import 'package:circle/core/di/injection.dart';
+import 'package:circle/core/error/failure.dart';
+import 'package:circle/core/helpers/extention.dart';
+import 'package:circle/data/models/response/base/api_response.dart';
+import 'package:circle/data/models/response/init_model.dart';
+import 'package:circle/data/provider/order_provider.dart';
+import 'package:circle/data/repository/cancel_order_repo.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 

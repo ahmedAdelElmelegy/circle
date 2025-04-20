@@ -1,8 +1,8 @@
-import 'package:circletraning/core/error/failure.dart';
-import 'package:circletraning/data/models/response/base/api_response.dart';
-import 'package:circletraning/data/models/response/payment_model/payment_data.dart';
-import 'package:circletraning/data/models/response/payment_model/payment_model.dart';
-import 'package:circletraning/data/repository/payment_repo.dart';
+import 'package:circle/core/error/failure.dart';
+import 'package:circle/data/models/response/base/api_response.dart';
+import 'package:circle/data/models/response/payment_model/payment_data.dart';
+import 'package:circle/data/models/response/payment_model/payment_model.dart';
+import 'package:circle/data/repository/payment_repo.dart';
 import 'package:flutter/material.dart';
 
 class PaymentProvider with ChangeNotifier {

@@ -1,4 +1,4 @@
-import 'package:circletraning/features/home/ui/widget/check_box_item.dart';
+import 'package:circle/features/home/ui/widget/check_box_item.dart';
 import 'package:flutter/material.dart';
 
 class CheckBoxCity extends StatefulWidget {

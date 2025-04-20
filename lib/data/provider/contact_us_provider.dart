@@ -1,7 +1,7 @@
-import 'package:circletraning/data/models/body/contact_us_request_body.dart';
-import 'package:circletraning/data/models/response/base/api_response.dart';
-import 'package:circletraning/data/models/response/init_model.dart';
-import 'package:circletraning/data/repository/contact_us_repo.dart';
+import 'package:circle/data/models/body/contact_us_request_body.dart';
+import 'package:circle/data/models/response/base/api_response.dart';
+import 'package:circle/data/models/response/init_model.dart';
+import 'package:circle/data/repository/contact_us_repo.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';

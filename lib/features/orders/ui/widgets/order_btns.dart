@@ -1,5 +1,5 @@
-import 'package:circletraning/core/widgets/custom_button.dart';
-import 'package:circletraning/data/provider/order_provider.dart';
+import 'package:circle/core/widgets/custom_button.dart';
+import 'package:circle/data/provider/order_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';

@@ -1,15 +1,13 @@
 import 'dart:io';
 
-
-import 'package:circletraning/core/helpers/constants.dart';
-import 'package:circletraning/core/helpers/extention.dart';
-import 'package:circletraning/core/theme/color_manager.dart';
-import 'package:circletraning/core/theme/styles.dart';
+import 'package:circle/core/helpers/constants.dart';
+import 'package:circle/core/helpers/extention.dart';
+import 'package:circle/core/theme/color_manager.dart';
+import 'package:circle/core/theme/styles.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
-
 
 import '../../../../core/helpers/spacing.dart';
 
@@ -93,7 +91,8 @@ class _SelectPhotoState extends State<SelectPhoto> {
                   child: Column(
                     children: [
                       verticalSpace(16),
-                      Icon(Icons.camera_alt_outlined, color: ColorManger.red, size: 24.sp),
+                      Icon(Icons.camera_alt_outlined,
+                          color: ColorManger.red, size: 24.sp),
                       Text(
                         'take_Photo',
                         style: TextStyles.font14MadaRegularBlack,
@@ -110,7 +109,8 @@ class _SelectPhotoState extends State<SelectPhoto> {
                   child: Column(
                     children: [
                       verticalSpace(16),
-                      Icon(Icons.photo_outlined, color: ColorManger.red, size: 24.sp),
+                      Icon(Icons.photo_outlined,
+                          color: ColorManger.red, size: 24.sp),
                       Text(
                         'select_Photo',
                         style: TextStyles.font14MadaRegularBlack,
@@ -132,6 +132,6 @@ class _SelectPhotoState extends State<SelectPhoto> {
     setState(() {
       selectedImage = image;
     });
-    widget.onImageSelected( selectedImage!);
+    widget.onImageSelected(selectedImage!);
   }
 }

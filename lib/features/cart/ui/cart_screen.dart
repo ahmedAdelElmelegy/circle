@@ -1,13 +1,13 @@
-import 'package:circletraning/core/helpers/app_method.dart';
-import 'package:circletraning/core/helpers/constants.dart';
-import 'package:circletraning/core/helpers/extention.dart';
-import 'package:circletraning/data/provider/shared_prefrence_provider.dart';
+import 'package:circle/core/helpers/app_method.dart';
+import 'package:circle/core/helpers/constants.dart';
+import 'package:circle/core/helpers/extention.dart';
+import 'package:circle/data/provider/shared_prefrence_provider.dart';
 
-import 'package:circletraning/features/cart/ui/widget/cart_item.dart';
-import 'package:circletraning/features/cart/ui/widget/empty_cart.dart';
-import 'package:circletraning/features/pay_and_delevary/ui/pay_and_delevary.dart';
-import 'package:circletraning/features/product_details/ui/product_detail_screen.dart';
-import 'package:circletraning/main.dart';
+import 'package:circle/features/cart/ui/widget/cart_item.dart';
+import 'package:circle/features/cart/ui/widget/empty_cart.dart';
+import 'package:circle/features/pay_and_delevary/ui/pay_and_delevary.dart';
+import 'package:circle/features/product_details/ui/product_detail_screen.dart';
+import 'package:circle/main.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 import 'package:flutter/material.dart';

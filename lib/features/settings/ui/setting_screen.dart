@@ -1,9 +1,9 @@
-import 'package:circletraning/core/helpers/app_method.dart';
-import 'package:circletraning/core/helpers/spacing.dart';
-import 'package:circletraning/features/settings/ui/widgets/logout_btn.dart';
-import 'package:circletraning/features/settings/ui/widgets/point_and_favorite_and_order.dart';
-import 'package:circletraning/features/settings/ui/widgets/profile_data.dart';
-import 'package:circletraning/features/settings/ui/widgets/setting_widget.dart';
+import 'package:circle/core/helpers/app_method.dart';
+import 'package:circle/core/helpers/spacing.dart';
+import 'package:circle/features/settings/ui/widgets/logout_btn.dart';
+import 'package:circle/features/settings/ui/widgets/point_and_favorite_and_order.dart';
+import 'package:circle/features/settings/ui/widgets/profile_data.dart';
+import 'package:circle/features/settings/ui/widgets/setting_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

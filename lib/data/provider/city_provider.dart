@@ -1,7 +1,7 @@
-import 'package:circletraning/core/error/failure.dart';
-import 'package:circletraning/data/models/response/base/api_response.dart';
-import 'package:circletraning/data/models/response/city_model/city_model.dart';
-import 'package:circletraning/data/repository/city_repo.dart';
+import 'package:circle/core/error/failure.dart';
+import 'package:circle/data/models/response/base/api_response.dart';
+import 'package:circle/data/models/response/city_model/city_model.dart';
+import 'package:circle/data/repository/city_repo.dart';
 import 'package:flutter/material.dart';
 
 class CityProvider with ChangeNotifier {

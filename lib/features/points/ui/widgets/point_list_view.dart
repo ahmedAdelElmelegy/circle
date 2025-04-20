@@ -1,8 +1,8 @@
-import 'package:circletraning/core/helpers/spacing.dart';
-import 'package:circletraning/core/theme/styles.dart';
-import 'package:circletraning/core/widgets/loading_widget.dart';
-import 'package:circletraning/data/provider/points_provider.dart';
-import 'package:circletraning/features/points/ui/widgets/point_list_title.dart';
+import 'package:circle/core/helpers/spacing.dart';
+import 'package:circle/core/theme/styles.dart';
+import 'package:circle/core/widgets/loading_widget.dart';
+import 'package:circle/data/provider/points_provider.dart';
+import 'package:circle/features/points/ui/widgets/point_list_title.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

@@ -1,8 +1,8 @@
-import 'package:circletraning/core/helpers/spacing.dart';
-import 'package:circletraning/core/theme/color_manager.dart';
-import 'package:circletraning/core/theme/styles.dart';
-import 'package:circletraning/features/settings/ui/widgets/delete_accounte_item.dart';
-import 'package:circletraning/features/settings/ui/widgets/setting_list_view.dart';
+import 'package:circle/core/helpers/spacing.dart';
+import 'package:circle/core/theme/color_manager.dart';
+import 'package:circle/core/theme/styles.dart';
+import 'package:circle/features/settings/ui/widgets/delete_accounte_item.dart';
+import 'package:circle/features/settings/ui/widgets/setting_list_view.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

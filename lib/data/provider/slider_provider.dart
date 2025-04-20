@@ -1,8 +1,8 @@
-import 'package:circletraning/core/error/failure.dart';
-import 'package:circletraning/data/models/response/base/api_response.dart';
-import 'package:circletraning/data/models/response/slider_model/slider.dart';
-import 'package:circletraning/data/models/response/slider_model/slider_model.dart';
-import 'package:circletraning/data/repository/slider_repo.dart';
+import 'package:circle/core/error/failure.dart';
+import 'package:circle/data/models/response/base/api_response.dart';
+import 'package:circle/data/models/response/slider_model/slider.dart';
+import 'package:circle/data/models/response/slider_model/slider_model.dart';
+import 'package:circle/data/repository/slider_repo.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';

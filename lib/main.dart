@@ -1,6 +1,6 @@
-import 'package:circletraning/core/di/injection.dart';
-import 'package:circletraning/data/repository/save_user_data.dart';
-import 'package:circletraning/my_app.dart';
+import 'package:circle/core/di/injection.dart';
+import 'package:circle/data/repository/save_user_data.dart';
+import 'package:circle/my_app.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

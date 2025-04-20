@@ -1,11 +1,11 @@
-import 'package:circletraning/core/helpers/constants.dart';
-import 'package:circletraning/core/helpers/extention.dart';
-import 'package:circletraning/core/theme/color_manager.dart';
-import 'package:circletraning/data/models/setting_model.dart';
-import 'package:circletraning/features/favorite/ui/favorite_screen.dart';
-import 'package:circletraning/features/orders/ui/orders_screen.dart';
-import 'package:circletraning/features/points/ui/points_screen.dart';
-import 'package:circletraning/features/settings/ui/widgets/column_in_settings.dart';
+import 'package:circle/core/helpers/constants.dart';
+import 'package:circle/core/helpers/extention.dart';
+import 'package:circle/core/theme/color_manager.dart';
+import 'package:circle/data/models/setting_model.dart';
+import 'package:circle/features/favorite/ui/favorite_screen.dart';
+import 'package:circle/features/orders/ui/orders_screen.dart';
+import 'package:circle/features/points/ui/points_screen.dart';
+import 'package:circle/features/settings/ui/widgets/column_in_settings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

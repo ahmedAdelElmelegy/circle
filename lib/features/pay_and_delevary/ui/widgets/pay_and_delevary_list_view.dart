@@ -1,6 +1,6 @@
-import 'package:circletraning/core/theme/color_manager.dart';
-import 'package:circletraning/data/provider/shared_prefrence_provider.dart';
-import 'package:circletraning/features/pay_and_delevary/ui/widgets/invoice_item.dart';
+import 'package:circle/core/theme/color_manager.dart';
+import 'package:circle/data/provider/shared_prefrence_provider.dart';
+import 'package:circle/features/pay_and_delevary/ui/widgets/invoice_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';

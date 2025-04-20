@@ -1,10 +1,10 @@
-import 'package:circletraning/core/helpers/constants.dart';
-import 'package:circletraning/core/widgets/svg_icon.dart';
-import 'package:circletraning/data/provider/home_provider.dart';
-import 'package:circletraning/features/category/ui/category_screen.dart';
-import 'package:circletraning/features/home/ui/home_screen.dart';
-import 'package:circletraning/features/map/ui/map_screen.dart';
-import 'package:circletraning/features/settings/ui/setting_screen.dart';
+import 'package:circle/core/helpers/constants.dart';
+import 'package:circle/core/widgets/svg_icon.dart';
+import 'package:circle/data/provider/home_provider.dart';
+import 'package:circle/features/category/ui/category_screen.dart';
+import 'package:circle/features/home/ui/home_screen.dart';
+import 'package:circle/features/map/ui/map_screen.dart';
+import 'package:circle/features/settings/ui/setting_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';

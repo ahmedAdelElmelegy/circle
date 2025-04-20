@@ -1,6 +1,5 @@
-import 'package:circletraning/data/models/body/calculate_order_cost/ProductDetail.dart';
+import 'package:circle/data/models/body/calculate_order_cost/ProductDetail.dart';
 import 'package:equatable/equatable.dart';
-
 
 class StoreOrder extends Equatable {
   final String? address;

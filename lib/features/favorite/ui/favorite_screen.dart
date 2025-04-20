@@ -1,6 +1,6 @@
-import 'package:circletraning/core/helpers/app_method.dart';
-import 'package:circletraning/core/helpers/spacing.dart';
-import 'package:circletraning/features/favorite/widgets/favorite_product_grid_view.dart';
+import 'package:circle/core/helpers/app_method.dart';
+import 'package:circle/core/helpers/spacing.dart';
+import 'package:circle/features/favorite/widgets/favorite_product_grid_view.dart';
 import 'package:flutter/material.dart';
 
 class FavoriteScreen extends StatelessWidget {

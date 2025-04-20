@@ -1,4 +1,4 @@
-import 'package:circletraning/core/theme/color_manager.dart';
+import 'package:circle/core/theme/color_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

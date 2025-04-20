@@ -1,9 +1,9 @@
-import 'package:circletraning/core/error/failure.dart';
-import 'package:circletraning/data/models/body/update_profile_request_body.dart';
-import 'package:circletraning/data/models/response/auth_model/auth_model.dart';
-import 'package:circletraning/data/models/response/base/api_response.dart';
-import 'package:circletraning/data/repository/save_user_data.dart';
-import 'package:circletraning/data/repository/update_profile_repo.dart';
+import 'package:circle/core/error/failure.dart';
+import 'package:circle/data/models/body/update_profile_request_body.dart';
+import 'package:circle/data/models/response/auth_model/auth_model.dart';
+import 'package:circle/data/models/response/base/api_response.dart';
+import 'package:circle/data/repository/save_user_data.dart';
+import 'package:circle/data/repository/update_profile_repo.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';

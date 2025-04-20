@@ -1,8 +1,8 @@
-import 'package:circletraning/core/error/failure.dart';
-import 'package:circletraning/data/models/response/base/api_response.dart';
-import 'package:circletraning/data/models/response/product_model/product_model.dart';
-import 'package:circletraning/data/models/response/product_model/product_model_data.dart';
-import 'package:circletraning/data/repository/product_repo.dart';
+import 'package:circle/core/error/failure.dart';
+import 'package:circle/data/models/response/base/api_response.dart';
+import 'package:circle/data/models/response/product_model/product_model.dart';
+import 'package:circle/data/models/response/product_model/product_model_data.dart';
+import 'package:circle/data/repository/product_repo.dart';
 import 'package:flutter/cupertino.dart';
 
 class ProductProvider with ChangeNotifier {

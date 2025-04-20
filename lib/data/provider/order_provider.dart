@@ -1,8 +1,8 @@
-import 'package:circletraning/core/error/failure.dart';
-import 'package:circletraning/data/models/response/base/api_response.dart';
-import 'package:circletraning/data/models/response/order_model/order_data.dart';
-import 'package:circletraning/data/models/response/order_model/order_model.dart';
-import 'package:circletraning/data/repository/order_repo.dart';
+import 'package:circle/core/error/failure.dart';
+import 'package:circle/data/models/response/base/api_response.dart';
+import 'package:circle/data/models/response/order_model/order_data.dart';
+import 'package:circle/data/models/response/order_model/order_model.dart';
+import 'package:circle/data/repository/order_repo.dart';
 import 'package:flutter/material.dart';
 
 class OrderProvider with ChangeNotifier {

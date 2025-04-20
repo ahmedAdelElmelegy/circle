@@ -1,5 +1,5 @@
-import 'package:circletraning/core/helpers/app_method.dart';
-import 'package:circletraning/features/map/ui/widgets/buttom_sheet_widget.dart';
+import 'package:circle/core/helpers/app_method.dart';
+import 'package:circle/features/map/ui/widgets/buttom_sheet_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 

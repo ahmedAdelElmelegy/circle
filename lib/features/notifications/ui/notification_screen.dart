@@ -1,5 +1,5 @@
-import 'package:circletraning/core/helpers/app_method.dart';
-import 'package:circletraning/features/notifications/ui/widgets/notification_list_view.dart';
+import 'package:circle/core/helpers/app_method.dart';
+import 'package:circle/features/notifications/ui/widgets/notification_list_view.dart';
 import 'package:flutter/material.dart';
 
 class NotificationScreen extends StatelessWidget {

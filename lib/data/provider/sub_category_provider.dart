@@ -1,8 +1,8 @@
-import 'package:circletraning/core/error/failure.dart';
-import 'package:circletraning/data/models/response/base/api_response.dart';
-import 'package:circletraning/data/models/response/sub_category_model/sub_category_data.dart';
-import 'package:circletraning/data/models/response/sub_category_model/sub_category_model.dart';
-import 'package:circletraning/data/repository/sub_category_repo.dart';
+import 'package:circle/core/error/failure.dart';
+import 'package:circle/data/models/response/base/api_response.dart';
+import 'package:circle/data/models/response/sub_category_model/sub_category_data.dart';
+import 'package:circle/data/models/response/sub_category_model/sub_category_model.dart';
+import 'package:circle/data/repository/sub_category_repo.dart';
 import 'package:flutter/material.dart';
 
 class SubCategoryProvider with ChangeNotifier {

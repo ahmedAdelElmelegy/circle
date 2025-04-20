@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:circletraning/core/widgets/custom_snake_bar.dart';
-import 'package:circletraning/data/models/response/product_model/product_model_data.dart';
+import 'package:circle/core/widgets/custom_snake_bar.dart';
+import 'package:circle/data/models/response/product_model/product_model_data.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

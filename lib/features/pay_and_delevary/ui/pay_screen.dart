@@ -1,17 +1,17 @@
-import 'package:circletraning/core/helpers/app_method.dart';
-import 'package:circletraning/core/helpers/constants.dart';
-import 'package:circletraning/core/helpers/spacing.dart';
-import 'package:circletraning/core/theme/color_manager.dart';
-import 'package:circletraning/core/theme/styles.dart';
-import 'package:circletraning/core/widgets/custom_button.dart';
-import 'package:circletraning/data/models/body/store_order/store_order.dart';
+import 'package:circle/core/helpers/app_method.dart';
+import 'package:circle/core/helpers/constants.dart';
+import 'package:circle/core/helpers/spacing.dart';
+import 'package:circle/core/theme/color_manager.dart';
+import 'package:circle/core/theme/styles.dart';
+import 'package:circle/core/widgets/custom_button.dart';
+import 'package:circle/data/models/body/store_order/store_order.dart';
 
-import 'package:circletraning/data/models/invoice_model.dart';
-import 'package:circletraning/data/provider/calculate_order_cost_provider.dart';
-import 'package:circletraning/data/provider/store_order_provider.dart';
-import 'package:circletraning/features/pay_and_delevary/ui/widgets/pay_item.dart';
-import 'package:circletraning/features/pay_and_delevary/ui/widgets/point_check_box.dart';
-import 'package:circletraning/features/pay_and_delevary/ui/widgets/product_invoice_price.dart';
+import 'package:circle/data/models/invoice_model.dart';
+import 'package:circle/data/provider/calculate_order_cost_provider.dart';
+import 'package:circle/data/provider/store_order_provider.dart';
+import 'package:circle/features/pay_and_delevary/ui/widgets/pay_item.dart';
+import 'package:circle/features/pay_and_delevary/ui/widgets/point_check_box.dart';
+import 'package:circle/features/pay_and_delevary/ui/widgets/product_invoice_price.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 import 'package:flutter/material.dart';

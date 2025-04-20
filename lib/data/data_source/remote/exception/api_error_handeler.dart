@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:circletraning/data/models/response/base/error_response.dart';
+import 'package:circle/data/models/response/base/error_response.dart';
 import 'package:dio/dio.dart';
 
 class ApiErrorHandler {

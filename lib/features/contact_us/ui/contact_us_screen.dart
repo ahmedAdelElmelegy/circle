@@ -1,14 +1,14 @@
-import 'package:circletraning/core/helpers/app_method.dart';
-import 'package:circletraning/core/helpers/constants.dart';
-import 'package:circletraning/core/helpers/spacing.dart';
-import 'package:circletraning/core/theme/color_manager.dart';
-import 'package:circletraning/core/theme/styles.dart';
-import 'package:circletraning/core/widgets/custom_button.dart';
-import 'package:circletraning/core/widgets/svg_icon.dart';
-import 'package:circletraning/data/models/body/contact_us_request_body.dart';
-import 'package:circletraning/data/provider/contact_us_provider.dart';
-import 'package:circletraning/features/home/ui/widget/custom_text_field.dart';
-import 'package:circletraning/main.dart';
+import 'package:circle/core/helpers/app_method.dart';
+import 'package:circle/core/helpers/constants.dart';
+import 'package:circle/core/helpers/spacing.dart';
+import 'package:circle/core/theme/color_manager.dart';
+import 'package:circle/core/theme/styles.dart';
+import 'package:circle/core/widgets/custom_button.dart';
+import 'package:circle/core/widgets/svg_icon.dart';
+import 'package:circle/data/models/body/contact_us_request_body.dart';
+import 'package:circle/data/provider/contact_us_provider.dart';
+import 'package:circle/features/home/ui/widget/custom_text_field.dart';
+import 'package:circle/main.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 import 'package:flutter/material.dart';

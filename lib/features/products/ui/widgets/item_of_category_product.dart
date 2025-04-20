@@ -1,6 +1,6 @@
-import 'package:circletraning/core/theme/color_manager.dart';
-import 'package:circletraning/core/theme/styles.dart';
-import 'package:circletraning/data/models/response/sub_category_model/sub_category_data.dart';
+import 'package:circle/core/theme/color_manager.dart';
+import 'package:circle/core/theme/styles.dart';
+import 'package:circle/data/models/response/sub_category_model/sub_category_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

@@ -1,18 +1,18 @@
-import 'package:circletraning/features/about/ui/about_screen.dart';
-import 'package:circletraning/features/cart/ui/cart_screen.dart';
-import 'package:circletraning/features/category/ui/category_screen.dart';
-import 'package:circletraning/features/favorite/ui/favorite_screen.dart';
+import 'package:circle/features/about/ui/about_screen.dart';
+import 'package:circle/features/cart/ui/cart_screen.dart';
+import 'package:circle/features/category/ui/category_screen.dart';
+import 'package:circle/features/favorite/ui/favorite_screen.dart';
 
-import 'package:circletraning/features/login/ui/login_screen.dart';
-import 'package:circletraning/features/main_screen.dart';
-import 'package:circletraning/features/notifications/ui/notification_screen.dart';
-import 'package:circletraning/features/orders/ui/orders_screen.dart';
-import 'package:circletraning/features/points/ui/points_screen.dart';
+import 'package:circle/features/login/ui/login_screen.dart';
+import 'package:circle/features/main_screen.dart';
+import 'package:circle/features/notifications/ui/notification_screen.dart';
+import 'package:circle/features/orders/ui/orders_screen.dart';
+import 'package:circle/features/points/ui/points_screen.dart';
 
-import 'package:circletraning/features/sign_up/ui/sign_up.dart';
-import 'package:circletraning/features/splash/ui/splash_screen.dart';
-import 'package:circletraning/main.dart';
-import 'package:circletraning/providers.dart';
+import 'package:circle/features/sign_up/ui/sign_up.dart';
+import 'package:circle/features/splash/ui/splash_screen.dart';
+import 'package:circle/main.dart';
+import 'package:circle/providers.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

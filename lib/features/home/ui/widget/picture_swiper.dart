@@ -1,8 +1,8 @@
 import 'package:card_swiper/card_swiper.dart';
-import 'package:circletraning/core/widgets/cached_network_image.dart';
-import 'package:circletraning/core/widgets/custom_error_widget.dart';
-import 'package:circletraning/core/widgets/loading_widget.dart';
-import 'package:circletraning/data/provider/slider_provider.dart';
+import 'package:circle/core/widgets/cached_network_image.dart';
+import 'package:circle/core/widgets/custom_error_widget.dart';
+import 'package:circle/core/widgets/loading_widget.dart';
+import 'package:circle/data/provider/slider_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';

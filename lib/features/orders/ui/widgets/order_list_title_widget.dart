@@ -1,6 +1,6 @@
-import 'package:circletraning/core/helpers/spacing.dart';
-import 'package:circletraning/core/theme/styles.dart';
-import 'package:circletraning/core/widgets/svg_icon.dart';
+import 'package:circle/core/helpers/spacing.dart';
+import 'package:circle/core/theme/styles.dart';
+import 'package:circle/core/widgets/svg_icon.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 

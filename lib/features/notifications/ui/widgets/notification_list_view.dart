@@ -1,4 +1,4 @@
-import 'package:circletraning/features/notifications/ui/widgets/notification_item.dart';
+import 'package:circle/features/notifications/ui/widgets/notification_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

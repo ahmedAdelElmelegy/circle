@@ -1,7 +1,7 @@
-import 'package:circletraning/core/error/failure.dart';
-import 'package:circletraning/data/models/response/base/api_response.dart';
-import 'package:circletraning/data/models/response/points_model/points_model.dart';
-import 'package:circletraning/data/repository/point_repo.dart';
+import 'package:circle/core/error/failure.dart';
+import 'package:circle/data/models/response/base/api_response.dart';
+import 'package:circle/data/models/response/points_model/points_model.dart';
+import 'package:circle/data/repository/point_repo.dart';
 import 'package:flutter/widgets.dart';
 
 class PointsProvider with ChangeNotifier {

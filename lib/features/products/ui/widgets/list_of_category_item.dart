@@ -1,7 +1,7 @@
-import 'package:circletraning/core/widgets/custom_error_widget.dart';
-import 'package:circletraning/core/widgets/loading_widget.dart';
-import 'package:circletraning/data/provider/sub_category_provider.dart';
-import 'package:circletraning/features/products/ui/widgets/item_of_category_product.dart';
+import 'package:circle/core/widgets/custom_error_widget.dart';
+import 'package:circle/core/widgets/loading_widget.dart';
+import 'package:circle/data/provider/sub_category_provider.dart';
+import 'package:circle/features/products/ui/widgets/item_of_category_product.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';

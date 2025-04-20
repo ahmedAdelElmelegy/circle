@@ -1,5 +1,5 @@
-import 'package:circletraning/data/models/response/category_model/category_data.dart';
-import 'package:circletraning/data/models/response/sub_category_model/sub_category_data.dart';
+import 'package:circle/data/models/response/category_model/category_data.dart';
+import 'package:circle/data/models/response/sub_category_model/sub_category_data.dart';
 import 'package:equatable/equatable.dart';
 
 // ignore: must_be_immutable

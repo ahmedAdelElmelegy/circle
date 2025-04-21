@@ -12,6 +12,7 @@ import 'package:circle/features/product_details/ui/widgets/price_product_detaile
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
 SharedPrefrenceProvider provider = getIt();
 
@@ -28,72 +29,75 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
   int count = 1;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: customAppBar('product_details', context),
-        body: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
-            child: Column(
-              children: [
-                SizedBox(
-                  width: 343.w,
-                  height: 234.h,
-                  child: CachedImage(
-                    image: widget.product.image!,
-                  ),
-                ),
-                verticalSpace(12),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      widget.product.title!,
-                      style: TextStyles.font18MadaSemiBoldBlack
-                          .copyWith(color: ColorManger.primary),
+    return Consumer<SharedPrefrenceProvider>(
+        builder: (context, provider, child) {
+      return Scaffold(
+          appBar: customAppBar('product_details', context),
+          body: SingleChildScrollView(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+              child: Column(
+                children: [
+                  SizedBox(
+                    width: 343.w,
+                    height: 234.h,
+                    child: CachedImage(
+                      image: widget.product.image!,
                     ),
-                    SvgIcon(AppIcons.heartIcon),
-                  ],
-                ),
-                verticalSpace(12),
-                SizedBox(
-                  height: 150.h,
-                  child: Text(
-                    widget.product.details!,
-                    style: TextStyles.font12MadaRegularGray,
                   ),
-                ),
-                verticalSpace(12),
-                PriceProductDetails(
-                  increaseCart: () {
-                    setState(() {
-                      widget.product.weightUnit =
-                          widget.product.weightUnit! + 1;
-                      setState(() {});
-                    });
-                  },
-                  decreaseCart: () {
-                    if (widget.product.weightUnit! > 1) {
+                  verticalSpace(12),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        widget.product.title!,
+                        style: TextStyles.font18MadaSemiBoldBlack
+                            .copyWith(color: ColorManger.primary),
+                      ),
+                      SvgIcon(AppIcons.heartIcon),
+                    ],
+                  ),
+                  verticalSpace(12),
+                  SizedBox(
+                    height: 150.h,
+                    child: Text(
+                      widget.product.details!,
+                      style: TextStyles.font12MadaRegularGray,
+                    ),
+                  ),
+                  verticalSpace(12),
+                  PriceProductDetails(
+                    increaseCart: () {
                       setState(() {
                         widget.product.weightUnit =
-                            widget.product.weightUnit! - 1;
+                            widget.product.weightUnit! + 1;
+                        setState(() {});
                       });
-                    }
-                  },
-                  count: widget.product.weightUnit!,
-                  price: widget.product.price.toString(),
-                )
-              ],
+                    },
+                    decreaseCart: () {
+                      if (widget.product.weightUnit! > 1) {
+                        setState(() {
+                          widget.product.weightUnit =
+                              widget.product.weightUnit! - 1;
+                        });
+                      }
+                    },
+                    count: widget.product.weightUnit!,
+                    price: widget.product.price.toString(),
+                  )
+                ],
+              ),
             ),
           ),
-        ),
-        bottomSheet: BottomSheetWidget(
-          isCart: true,
-          onTap: () {
-            provider.addToCart(widget.product, context);
-          },
-          inCart: provider.isProductInCart(widget.product),
-          totalPrice: provider.totalProductPrice(widget.product).toString(),
-        ));
+          bottomSheet: BottomSheetWidget(
+            isCart: true,
+            onTap: () {
+              provider.addToCart(widget.product, context);
+            },
+            inCart: provider.isProductInCart(widget.product),
+            totalPrice: provider.totalProductPrice(widget.product).toString(),
+          ));
+    });
   }
 }
 

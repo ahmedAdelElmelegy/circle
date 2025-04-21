@@ -15,7 +15,7 @@ class Product extends Equatable {
   final int? salesLimit;
   final int? price;
   final String? unit;
-  final int? weightUnit;
+  final num? weightUnit;
   final int? priceWeightUnit;
   final bool? isOffer;
   final int? isActive;
@@ -67,7 +67,7 @@ class Product extends Equatable {
         salesLimit: json['sales_limit'] as int?,
         price: json['price'] as int?,
         unit: json['unit'] as String?,
-        weightUnit: json['weight_unit'] as int?,
+        weightUnit: json['weight_unit'] as num?,
         priceWeightUnit: json['price_weight_unit'] as int?,
         isOffer: json['is_offer'] as bool?,
         isActive: json['is_active'] as int?,

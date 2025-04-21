@@ -9,6 +9,7 @@ import 'package:circle/data/provider/favorite_provider.dart';
 import 'package:circle/data/provider/home_provider.dart';
 import 'package:circle/data/provider/latest_product_provider.dart';
 import 'package:circle/data/provider/login_provider.dart';
+import 'package:circle/data/provider/network_services.dart';
 import 'package:circle/data/provider/order_provider.dart';
 import 'package:circle/data/provider/payment_provider.dart';
 import 'package:circle/data/provider/points_provider.dart';
@@ -55,6 +56,7 @@ class GenerateMultiProvider extends StatelessWidget {
       ChangeNotifierProvider(create: (_) => getIt<SignUpProvider>()),
       ChangeNotifierProvider(create: (_) => getIt<UpdateProfileProvider>()),
       ChangeNotifierProvider(create: (_) => getIt<ContactUsProvider>()),
+      ChangeNotifierProvider(create: (_) => NetworkService()),
     ], child: child);
   }
 }

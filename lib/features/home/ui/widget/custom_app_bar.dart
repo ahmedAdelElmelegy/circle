@@ -46,9 +46,9 @@ class CustomAppBar extends StatelessWidget {
                     style: TextStyles.font12MadaRegularGray,
                   ).tr(),
                   Text(
-                    saveUserData.getUserData()!.firstName!,
+                    saveUserData.getUserData()?.firstName ?? 'name'.tr(),
                     style: TextStyles.font16MadaSemiBoldBlack,
-                  ).tr(),
+                  ),
                 ],
               ),
               const Spacer(),

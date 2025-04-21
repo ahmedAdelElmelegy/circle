@@ -15,7 +15,7 @@ class CartItem extends StatelessWidget {
   final void Function()? deleteProduct;
   final void Function()? increamentQuantity;
   final void Function()? decreamentQuantity;
-  final int totalProductPrice;
+  final num totalProductPrice;
   const CartItem(
       {super.key,
       required this.product,

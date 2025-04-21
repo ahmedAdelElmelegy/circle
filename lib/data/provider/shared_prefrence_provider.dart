@@ -18,7 +18,7 @@ class SharedPrefrenceProvider with ChangeNotifier {
     return total;
   }
 
-  dynamic totalProductPrice(ProductModelData product) {
+  num totalProductPrice(ProductModelData product) {
     return product.weightUnit! * product.price!;
   }
 

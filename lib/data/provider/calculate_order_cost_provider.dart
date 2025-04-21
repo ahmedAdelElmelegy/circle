@@ -1,7 +1,7 @@
 import 'package:circle/core/di/injection.dart';
 import 'package:circle/core/error/failure.dart';
 import 'package:circle/core/helpers/extention.dart';
-import 'package:circle/data/models/body/calculate_order_cost/ProductDetail.dart';
+import 'package:circle/data/models/body/calculate_order_cost/product_details.dart';
 import 'package:circle/data/models/body/calculate_order_cost/calculate_order_cost.dart';
 import 'package:circle/data/models/response/base/api_response.dart';
 import 'package:circle/data/models/response/calculate_order_cost_model/calculate_order_cost_model.dart';

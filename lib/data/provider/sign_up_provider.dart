@@ -1,6 +1,6 @@
 import 'package:circle/core/error/failure.dart';
 import 'package:circle/core/helpers/extention.dart';
-import 'package:circle/data/models/body/signUp_request_body.dart';
+import 'package:circle/data/models/body/signup_response_body.dart';
 import 'package:circle/data/models/response/auth_model/auth_model.dart';
 import 'package:circle/data/models/response/base/api_response.dart';
 import 'package:circle/data/repository/save_user_data.dart';

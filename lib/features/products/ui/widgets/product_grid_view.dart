@@ -1,6 +1,7 @@
 import 'package:circle/core/widgets/custom_error_widget.dart';
 import 'package:circle/core/widgets/loading_widget.dart';
 import 'package:circle/data/provider/product_provider.dart';
+import 'package:circle/data/provider/shared_prefrence_provider.dart';
 import 'package:circle/features/home/ui/widget/product_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -67,6 +68,11 @@ class _ProductGridViewState extends State<ProductGridView> {
             itemBuilder: (BuildContext context, int index) => provider.isLoading
                 ? const LoadingWidget()
                 : ProductItem(
+                    onTap: () {
+                      Provider.of<SharedPrefrenceProvider>(context,
+                              listen: false)
+                          .addToCart(provider.productList[index], context);
+                    },
                     product: provider.productList[index],
                   ),
           );

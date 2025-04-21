@@ -1,5 +1,7 @@
 import 'package:circle/core/helpers/app_method.dart';
+import 'package:circle/core/helpers/extention.dart';
 import 'package:circle/core/helpers/spacing.dart';
+import 'package:circle/features/main_screen.dart';
 import 'package:circle/features/orders/ui/widgets/order_btns.dart';
 import 'package:circle/features/orders/ui/widgets/order_list_view.dart';
 
@@ -19,7 +21,13 @@ class _OrdersScreenState extends State<OrdersScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar('my_orders', context),
+      appBar: customAppBarWithNavigation(
+        'my_orders',
+        () {
+          push(const MainScreen());
+        },
+        context,
+      ),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Padding(

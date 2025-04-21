@@ -5,6 +5,7 @@ import 'package:circle/data/models/response/base/api_response.dart';
 import 'package:circle/data/models/response/init_model.dart';
 import 'package:circle/data/provider/order_provider.dart';
 import 'package:circle/data/repository/cancel_order_repo.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -27,7 +28,7 @@ class CancelOrderProvider with ChangeNotifier {
         apiResponse.response!.statusCode == 200) {
       initModel = InitModel.fromJson(apiResponse.response!.data);
       if (initModel!.code == 200) {
-        Fluttertoast.showToast(msg: 'order cancel successfully');
+        Fluttertoast.showToast(msg: 'order_cancel_sucessfully'.tr());
         orderProvider.getOrder();
         pop();
         notifyListeners();

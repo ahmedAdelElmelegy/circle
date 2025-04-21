@@ -9,9 +9,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PriceProductDetails extends StatelessWidget {
   final String price;
+
+  final VoidCallback? increaseCart;
+  final VoidCallback? decreaseCart;
+  final num count;
   const PriceProductDetails({
     super.key,
     required this.price,
+    this.increaseCart,
+    this.decreaseCart,
+    required this.count,
   });
 
   @override
@@ -63,7 +70,7 @@ class PriceProductDetails extends StatelessWidget {
           Row(
             children: [
               InkWell(
-                onTap: () {},
+                onTap: increaseCart,
                 child: Material(
                   color: Colors.transparent,
                   borderRadius: BorderRadius.circular(12.r),
@@ -88,14 +95,14 @@ class PriceProductDetails extends StatelessWidget {
                     borderRadius: BorderRadius.circular(16.r),
                   ),
                   child: Text(
-                    '2',
+                    count.toString(),
                     style: TextStyles.font16MadaSemiBoldBlack,
                   ),
                 ),
               ),
               horizontalSpace(8),
               InkWell(
-                onTap: () {},
+                onTap: decreaseCart,
                 child: Material(
                   color: Colors.transparent,
                   borderRadius: BorderRadius.circular(12.r),

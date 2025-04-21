@@ -31,6 +31,7 @@ class UpdateProfileProvider with ChangeNotifier {
       if (authModel!.code == 200) {
         saveUserData.saveUserData(authModel!);
         saveUserData.saveUserToken(authModel!.data!.auth!.token!);
+        saveUserData.getUserData();
 
         Fluttertoast.showToast(msg: 'update_profile_success'.tr());
       } else if (authModel!.code == 422) {

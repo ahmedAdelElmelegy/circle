@@ -1,4 +1,4 @@
-import 'package:circle/data/models/body/calculate_order_cost/ProductDetail.dart';
+import 'package:circle/data/models/body/calculate_order_cost/product_details.dart';
 import 'package:equatable/equatable.dart';
 
 class StoreOrder extends Equatable {

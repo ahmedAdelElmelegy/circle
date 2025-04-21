@@ -1,23 +1,31 @@
+import 'package:circle/core/di/injection.dart';
 import 'package:circle/core/helpers/app_method.dart';
 import 'package:circle/core/helpers/constants.dart';
-import 'package:circle/core/helpers/extention.dart';
 import 'package:circle/core/helpers/spacing.dart';
 import 'package:circle/core/theme/color_manager.dart';
 import 'package:circle/core/theme/styles.dart';
 import 'package:circle/core/widgets/cached_network_image.dart';
 import 'package:circle/core/widgets/svg_icon.dart';
 import 'package:circle/data/models/response/product_model/product_model_data.dart';
-import 'package:circle/features/cart/ui/cart_screen.dart';
+import 'package:circle/data/provider/shared_prefrence_provider.dart';
 import 'package:circle/features/product_details/ui/widgets/price_product_detailes.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class ProductDetailScreen extends StatelessWidget {
+SharedPrefrenceProvider provider = getIt();
+
+class ProductDetailScreen extends StatefulWidget {
   final ProductModelData product;
   static const routeName = '/product-detail-screen';
   const ProductDetailScreen({super.key, required this.product});
 
+  @override
+  State<ProductDetailScreen> createState() => _ProductDetailScreenState();
+}
+
+class _ProductDetailScreenState extends State<ProductDetailScreen> {
+  int count = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +39,7 @@ class ProductDetailScreen extends StatelessWidget {
                   width: 343.w,
                   height: 234.h,
                   child: CachedImage(
-                    image: product.image!,
+                    image: widget.product.image!,
                   ),
                 ),
                 verticalSpace(12),
@@ -39,7 +47,7 @@ class ProductDetailScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      product.title!,
+                      widget.product.title!,
                       style: TextStyles.font18MadaSemiBoldBlack
                           .copyWith(color: ColorManger.primary),
                     ),
@@ -50,13 +58,29 @@ class ProductDetailScreen extends StatelessWidget {
                 SizedBox(
                   height: 150.h,
                   child: Text(
-                    product.details!,
+                    widget.product.details!,
                     style: TextStyles.font12MadaRegularGray,
                   ),
                 ),
                 verticalSpace(12),
                 PriceProductDetails(
-                  price: product.price.toString(),
+                  increaseCart: () {
+                    setState(() {
+                      widget.product.weightUnit =
+                          widget.product.weightUnit! + 1;
+                      setState(() {});
+                    });
+                  },
+                  decreaseCart: () {
+                    if (widget.product.weightUnit! > 1) {
+                      setState(() {
+                        widget.product.weightUnit =
+                            widget.product.weightUnit! - 1;
+                      });
+                    }
+                  },
+                  count: widget.product.weightUnit!,
+                  price: widget.product.price.toString(),
                 )
               ],
             ),
@@ -65,21 +89,24 @@ class ProductDetailScreen extends StatelessWidget {
         bottomSheet: BottomSheetWidget(
           isCart: true,
           onTap: () {
-            push(const CartScreen());
+            provider.addToCart(widget.product, context);
           },
-          totalPrice: 250,
+          inCart: provider.isProductInCart(widget.product),
+          totalPrice: provider.totalProductPrice(widget.product).toString(),
         ));
   }
 }
 
 class BottomSheetWidget extends StatelessWidget {
-  final double totalPrice;
+  final String totalPrice;
   final String? buttonText;
   final bool? isCart;
+  final bool? inCart;
   final Function()? onTap;
   const BottomSheetWidget({
     super.key,
     required this.totalPrice,
+    this.inCart,
     this.buttonText = 'add_to_cart',
     this.isCart = false,
     this.onTap,
@@ -113,7 +140,7 @@ class BottomSheetWidget extends StatelessWidget {
                 ),
                 horizontalSpace(4),
                 Text(
-                  totalPrice.toString(),
+                  totalPrice,
                   style: TextStyles.font18MadaSemiBoldBlack,
                 ),
                 horizontalSpace(4.5),
@@ -127,6 +154,7 @@ class BottomSheetWidget extends StatelessWidget {
               onTap: onTap,
               buttonText: buttonText!,
               isCart: isCart,
+              inCart: inCart,
             ),
           ],
         ),
@@ -138,9 +166,14 @@ class BottomSheetWidget extends StatelessWidget {
 class AddToCartBotton extends StatelessWidget {
   final String buttonText;
   final bool? isCart;
+  final bool? inCart;
   final Function()? onTap;
   const AddToCartBotton(
-      {super.key, required this.buttonText, this.isCart, this.onTap});
+      {super.key,
+      required this.buttonText,
+      this.isCart,
+      this.onTap,
+      this.inCart});
 
   @override
   Widget build(BuildContext context) {
@@ -156,7 +189,7 @@ class AddToCartBotton extends StatelessWidget {
                   SvgIcon(AppIcons.addCartIcon),
                   horizontalSpace(8),
                   Text(
-                    'add_to_cart'.tr(),
+                    inCart == true ? 'in_cart'.tr() : 'add_to_cart'.tr(),
                     style: TextStyles.font14MadaRegularWith,
                   ),
                 ],

@@ -11,6 +11,8 @@
   "price": "250",
   "meat_and_poultry": "Meat and Poultry",
   "more": "More",
+  "order_cancel_sucessfully": "Order canceled successfully",
+  "in_cart": "In Cart",
   "my_orders": "My Orders",
   "favorite": "Favorites",
   "points": "Points",

@@ -68,7 +68,7 @@ class PayAndDelevary extends StatelessWidget {
         ),
       ),
       bottomSheet: BottomSheetWidget(
-        totalPrice: totalPrice,
+        totalPrice: totalPrice.toString(),
         buttonText: 'confirm',
         onTap: () {
           if (provider.position == null) {

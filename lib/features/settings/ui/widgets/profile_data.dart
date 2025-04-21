@@ -1,8 +1,6 @@
 import 'package:circle/core/helpers/constants.dart';
-import 'package:circle/core/helpers/extention.dart';
 import 'package:circle/core/helpers/spacing.dart';
 import 'package:circle/core/widgets/cached_network_image.dart';
-import 'package:circle/features/sign_up/ui/sign_up.dart';
 import 'package:circle/main.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -11,10 +9,21 @@ import 'package:circle/core/theme/styles.dart';
 import 'package:circle/core/widgets/svg_icon.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class ProfileData extends StatelessWidget {
+class ProfileData extends StatefulWidget {
   const ProfileData({
     super.key,
   });
+
+  @override
+  State<ProfileData> createState() => _ProfileDataState();
+}
+
+class _ProfileDataState extends State<ProfileData> {
+  @override
+  void initState() {
+    saveUserData.getUserData();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,17 +65,12 @@ class ProfileData extends StatelessWidget {
                       ),
                     ),
                   ),
-            GestureDetector(
-              onTap: () {
-                push(const SignUp());
-              },
-              child: Container(
-                padding: EdgeInsets.all(5.sp),
-                decoration: const BoxDecoration(
-                    shape: BoxShape.circle, color: ColorManger.white),
-                child: SvgIcon(AppIcons.editProfileIcon,
-                    width: 24.w, height: 24.h),
-              ),
+            Container(
+              padding: EdgeInsets.all(5.sp),
+              decoration: const BoxDecoration(
+                  shape: BoxShape.circle, color: ColorManger.white),
+              child:
+                  SvgIcon(AppIcons.editProfileIcon, width: 24.w, height: 24.h),
             ),
           ],
         ),

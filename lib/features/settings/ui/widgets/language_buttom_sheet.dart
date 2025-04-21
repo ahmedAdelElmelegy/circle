@@ -3,13 +3,19 @@ import 'package:circle/core/helpers/spacing.dart';
 import 'package:circle/core/widgets/custom_button.dart';
 import 'package:circle/core/widgets/custom_title_bottom_sheet.dart';
 import 'package:circle/features/loca.dart';
+import 'package:circle/features/main_screen.dart';
 import 'package:circle/features/settings/ui/widgets/check_box_languages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class LanguageButtomSheet extends StatelessWidget {
+class LanguageButtomSheet extends StatefulWidget {
   const LanguageButtomSheet({super.key});
 
+  @override
+  State<LanguageButtomSheet> createState() => _LanguageButtomSheetState();
+}
+
+class _LanguageButtomSheetState extends State<LanguageButtomSheet> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -33,7 +39,8 @@ class LanguageButtomSheet extends StatelessWidget {
               title: 'confirm',
               onTap: () {
                 LoclizationCheck.changeLang(context);
-                pop();
+
+                push(const MainScreen());
               },
             )
           ],

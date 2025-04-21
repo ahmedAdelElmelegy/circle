@@ -1,8 +1,9 @@
 import 'dart:convert';
 
-import 'package:circle/core/widgets/custom_snake_bar.dart';
 import 'package:circle/data/models/response/product_model/product_model_data.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPrefrenceProvider with ChangeNotifier {
@@ -69,7 +70,7 @@ class SharedPrefrenceProvider with ChangeNotifier {
         saveCartItem();
         notifyListeners();
         // ignore: use_build_context_synchronously
-        customShowSnackBar(context, check);
+        Fluttertoast.showToast(msg: 'Product_is_already_in_the_cart'.tr());
         return;
       }
     }
@@ -78,7 +79,7 @@ class SharedPrefrenceProvider with ChangeNotifier {
       saveCartItem();
       notifyListeners();
       // ignore: use_build_context_synchronously
-      customShowSnackBar(context, check);
+      Fluttertoast.showToast(msg: 'product add to cart successfully'.tr());
     }
   }
 

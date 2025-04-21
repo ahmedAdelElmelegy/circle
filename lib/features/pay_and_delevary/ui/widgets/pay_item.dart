@@ -12,31 +12,29 @@ class PayItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        children: [
-          SvgIcon(
-            inviceItem.icon,
-            width: 20.w,
-            height: 20.h,
-          ),
-          horizontalSpace(12),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                inviceItem.title.tr(),
-                style: TextStyles.font12MadaRegularGray,
-              ),
-              verticalSpace(4),
-              Text(
-                inviceItem.subtitle.tr(),
-                style: TextStyles.font14MadaRegularBlack,
-              ),
-            ],
-          ),
-        ],
-      ),
+    return Row(
+      children: [
+        SvgIcon(
+          inviceItem.icon,
+          width: 20.w,
+          height: 20.h,
+        ),
+        horizontalSpace(12),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              inviceItem.title.tr(),
+              style: TextStyles.font12MadaRegularGray,
+            ),
+            verticalSpace(4),
+            Text(
+              inviceItem.subtitle.tr(),
+              style: TextStyles.font14MadaRegularBlack,
+            ),
+          ],
+        ),
+      ],
     );
   }
 }

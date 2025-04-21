@@ -1,4 +1,3 @@
-// ignore: file_names
 import 'package:equatable/equatable.dart';
 
 class Productdetails extends Equatable {

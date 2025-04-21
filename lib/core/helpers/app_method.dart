@@ -25,8 +25,21 @@ AppBar customAppBar(String title, BuildContext context) {
   );
 }
 
+AppBar customAppBarWithNavigation(
+    String title, Function() onBack, BuildContext context) {
+  return AppBar(
+    leading: IconButton(
+        onPressed: () => onBack(), icon: SvgIcon(AppIcons.arrowBackIcon)),
+    title: Text(
+      title.tr(),
+      style: TextStyles.font18MadaSemiBoldBlack,
+    ),
+  );
+}
+
 AppBar customAppBarWithoutLeading(String title, BuildContext context) {
   return AppBar(
+    automaticallyImplyLeading: false,
     title: Text(
       title.tr(),
       style: TextStyles.font18MadaSemiBoldBlack,

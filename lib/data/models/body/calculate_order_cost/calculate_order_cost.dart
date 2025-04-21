@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-import 'ProductDetail.dart';
+import 'product_details.dart';
 
 class CalculateOrderCost extends Equatable {
   final double? latitude;

@@ -1,12 +1,11 @@
 import 'dart:io';
-
 import 'package:circle/core/helpers/constants.dart';
 import 'package:circle/core/helpers/spacing.dart';
 import 'package:circle/core/theme/styles.dart';
 import 'package:circle/core/widgets/custom_app_bar.dart';
 import 'package:circle/core/widgets/custom_button.dart';
 import 'package:circle/core/widgets/svg_icon.dart';
-import 'package:circle/data/models/body/signUp_request_body.dart';
+import 'package:circle/data/models/body/signup_response_body.dart';
 import 'package:circle/data/models/body/update_profile_request_body.dart';
 import 'package:circle/data/provider/sign_up_provider.dart';
 import 'package:circle/data/provider/update_profile_provider.dart';

@@ -66,7 +66,7 @@ class _CartScreenState extends State<CartScreen> {
               separatorBuilder: (context, index) => const Divider(),
             )),
         bottomSheet: BottomSheetWidget(
-          totalPrice: provider.totalPrice(),
+          totalPrice: provider.totalPrice().toString(),
           buttonText: 'order_now',
           onTap: () {
             if (saveUserData.getUserToken() == '') {

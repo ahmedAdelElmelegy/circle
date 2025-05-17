@@ -25,19 +25,22 @@ Circle is a modern mobile e-commerce application built with Flutter. It offers a
 
 ## 📸 Screenshots
 
-> *Add your app screenshots in the **`assets/screenshots`** folder and reference them below.*
+## 📸 Screenshots
 
-| Auth Screen | Home Screen | Product Screen | Category Screen |
-| ----------- | ----------- | -------------- | --------------- |
-|             |             |                |                 |
+> *Add your app screenshots in the `assets/screenshots` folder and reference them below.*
 
-| Cart Screen | Order Screen | Place Order + Pay                                               | Google Maps |
-| ----------- | ------------ | --------------------------------------------------------------- | ----------- |
-|             |              | !\[]\(assets/images/screenshoot/place\_order\_with \_pay/1.jpg) |             |
+| Auth Screen | Home Screen                                   | Product Screen                            | Category Screen |
+| ----------- | --------------------------------------------| ----------------------------------------| --------------- |
+|             | ![Home](assets/images/screenshoot/home/1.jpg) | ![Product](assets/images/screenshoot/product/product.jpg) |                 |
 
-| Language Selector | Notifications | Contact Us | Dashboard |
-| ----------------- | ------------- | ---------- | --------- |
-|                   |               |            |           |
+| Cart Screen | Order Screen                                | Place Order + Pay                                 | Google Maps                                      |
+| ----------- | -------------------------------------------| ------------------------------------------------ | ------------------------------------------------|
+|             | ![Order](assets/images/screenshoot/order/1.jpg) | ![Place Order](assets/images/screenshoot/place_order_with _pay/1.jpg) | ![Google Maps](assets/images/screenshoot/maps/google_map_places.jpg) |
+
+| Language Selector                          | Notifications                                        | Contact Us | Dashboard |
+| -----------------------------------------| --------------------------------------------------- | ----------| --------- |
+| ![Language](assets/images/screenshoot/lang/eng.jpg) | ![Notifications](assets/images/screenshoot/notification/notification.jpg) |            |           |
+
 
 ## 📦 Getting Started
 

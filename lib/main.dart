@@ -11,7 +11,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
   await ScreenUtil.ensureScreenSize();
-  // init
+  // initgit push origin --delete master
   init();
   runApp(
     EasyLocalization(

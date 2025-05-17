@@ -24,8 +24,6 @@ Circle is a modern mobile e-commerce application built with Flutter. It offers a
 ## 📸 Screenshots
 
 
-> *Add your app screenshots in the `assets/screenshots` folder and reference them below.*
-
 | Auth Screen                          | Home Screen                                | Product Screen                              | Category Screen                            |
 |------------------------------------|-------------------------------------------|---------------------------------------------|--------------------------------------------|
 | ![Auth](assets/images/screenshoot/auth/1.jpg) | ![Home](assets/images/screenshoot/home/1.jpg) | ![Product](assets/images/screenshoot/product/product.jpg) | ![Category](assets/images/screenshoot/category/category.jpg) |

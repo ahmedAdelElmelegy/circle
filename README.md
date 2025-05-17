@@ -30,13 +30,13 @@ Circle is a modern mobile e-commerce application built with Flutter. It offers a
 | ----------- | --------------------------------------------| ----------------------------------------| --------------- |
 |      ![Home](assets/images/screenshoot/auth/1.jpg)       | ![Home](assets/images/screenshoot/home/1.jpg) | ![Product](assets/images/screenshoot/product/product.jpg) |        ![Product](assets/images/screenshoot/category/category.jpg)          |
 
-| Cart Screen | Order Screen                                | Place Order + Pay                                 | Google Maps                                      |
+| Cart Screen | Order Screen                                | Place Order + Pay                                 | Branch Locations                                      |
 | ----------- | -------------------------------------------| ------------------------------------------------ | ------------------------------------------------|
-|   ![Order](assets/images/screenshoot/cart/empty.jpg) ![Order](assets/images/screenshoot/cart/fill.jpg)           | ![Order](assets/images/screenshoot/order/1.jpg) | ![Place Order](assets/images/screenshoot/place_order_with _pay/1.jpg) | ![Google Maps](assets/images/screenshoot/maps/google_map_places.jpg) |
+|   ![Order](assets/images/screenshoot/cart/empty.jpg) ![Order](assets/images/screenshoot/cart/fill.jpg)           | ![Order](assets/images/screenshoot/order/1.jpg) | ![Place Order]![Place Order](assets/images/screenshoot/place_order_with_pay/1.jpg) ![Place Order](assets/images/screenshoot/place_order_with_pay/2.jpg) ![Place Order](assets/images/screenshoot/place_order_with_pay/3.jpg)  | ![Google Maps](assets/images/screenshoot/maps/google_map_places.jpg) |
 
 | Language Selector                          | Notifications                                        | Contact Us | Dashboard |
 | -----------------------------------------| --------------------------------------------------- | ----------| --------- |
-| ![Language](assets/images/screenshoot/lang/eng.jpg) | ![Notifications](assets/images/screenshoot/notification/notification.jpg) |            |           |
+|![Language](assets/images/screenshoot/lang/tra.jpg) ![Language](assets/images/screenshoot/lang/eng.jpg) ![Language](assets/images/screenshoot/lang/ar.jpg)  | ![Notifications](assets/images/screenshoot/notification/notification.jpg) |            |           |
 
 
 ## 📦 Getting Started
@@ -186,10 +186,6 @@ Contributions are welcome! Please follow these steps:
 4. Push to the branch (`git push origin feature/YourFeature`)
 5. Open a Pull Request
 
-## 📄 License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
 
 *Happy coding!*

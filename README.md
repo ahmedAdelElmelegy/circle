@@ -19,23 +19,20 @@ Circle is a modern mobile e-commerce application built with Flutter. It offers a
 * **🔐 Authentication**: Login, register, and logout with secure token handling.
 * **🔔 Notifications**: Push notifications for order status updates and promotions.
 * **🌐 Localization**: Support for multiple languages (e.g., English, Arabic).
-* **🌙 Dark Mode**: Supports light and dark themes.
-* **📊 Dashboard**: Visual dashboard for admin or analytics purposes.
-* **📦 Inventory Management**: Admin tools to manage product stock levels.
+
 
 ## 📸 Screenshots
 
-## 📸 Screenshots
 
 > *Add your app screenshots in the `assets/screenshots` folder and reference them below.*
 
 | Auth Screen | Home Screen                                   | Product Screen                            | Category Screen |
 | ----------- | --------------------------------------------| ----------------------------------------| --------------- |
-|             | ![Home](assets/images/screenshoot/home/1.jpg) | ![Product](assets/images/screenshoot/product/product.jpg) |                 |
+|      ![Home](assets/images/screenshoot/auth/1.jpg)       | ![Home](assets/images/screenshoot/home/1.jpg) | ![Product](assets/images/screenshoot/product/product.jpg) |        ![Product](assets/images/screenshoot/category/category.jpg)          |
 
 | Cart Screen | Order Screen                                | Place Order + Pay                                 | Google Maps                                      |
 | ----------- | -------------------------------------------| ------------------------------------------------ | ------------------------------------------------|
-|             | ![Order](assets/images/screenshoot/order/1.jpg) | ![Place Order](assets/images/screenshoot/place_order_with _pay/1.jpg) | ![Google Maps](assets/images/screenshoot/maps/google_map_places.jpg) |
+|   ![Order](assets/images/screenshoot/cart/empty.jpg) ![Order](assets/images/screenshoot/cart/fill.jpg)           | ![Order](assets/images/screenshoot/order/1.jpg) | ![Place Order](assets/images/screenshoot/place_order_with _pay/1.jpg) | ![Google Maps](assets/images/screenshoot/maps/google_map_places.jpg) |
 
 | Language Selector                          | Notifications                                        | Contact Us | Dashboard |
 | -----------------------------------------| --------------------------------------------------- | ----------| --------- |

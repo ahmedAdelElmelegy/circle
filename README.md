@@ -34,7 +34,7 @@ Circle is a modern mobile e-commerce application built with Flutter. It offers a
 | ----------- | -------------------------------------------| ------------------------------------------------ | ------------------------------------------------|
 |   ![Order](assets/images/screenshoot/cart/empty.jpg) ![Order](assets/images/screenshoot/cart/fill.jpg)           | ![Order](assets/images/screenshoot/order/1.jpg) | ![Place Order]![Place Order](assets/images/screenshoot/place_order_with_pay/1.jpg) ![Place Order](assets/images/screenshoot/place_order_with_pay/2.jpg) ![Place Order](assets/images/screenshoot/place_order_with_pay/3.jpg)  | ![Google Maps](assets/images/screenshoot/maps/google_map_places.jpg) |
 
-| Language Selector                          | Notifications                                        | Contact Us 
+| Language Selector                          | Notifications                                        | Contact Us |
 | -----------------------------------------| --------------------------------------------------- | ----------| --------- |
 |![Language](assets/images/screenshoot/lang/tra.jpg) ![Language](assets/images/screenshoot/lang/eng.jpg) ![Language](assets/images/screenshoot/lang/ar.jpg)  | ![Notifications](assets/images/screenshoot/notification/notification.jpg) |            |           |
 

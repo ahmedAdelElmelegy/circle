@@ -25,18 +25,18 @@ Circle is a modern mobile e-commerce application built with Flutter. It offers a
 
 
 > *Add your app screenshots in the `assets/screenshots` folder and reference them below.*
-| Auth Screen                          | Home Screen                                 | Product Screen                              | Category Screen                            |
-|------------------------------------|---------------------------------------------|---------------------------------------------|--------------------------------------------|
+
+| Auth Screen                           | Home Screen                                  | Product Screen                               | Category Screen                             |
+|-------------------------------------|---------------------------------------------|----------------------------------------------|--------------------------------------------|
 | ![Auth](assets/images/screenshoot/auth/1.jpg) | ![Home](assets/images/screenshoot/home/1.jpg) | ![Product](assets/images/screenshoot/product/product.jpg) | ![Category](assets/images/screenshoot/category/category.jpg) |
 
-| Cart Screen                                            | Order Screen                               | Place Order + Pay                                                  | Branch Locations                          |
-|--------------------------------------------------------|--------------------------------------------|-------------------------------------------------------------------|--------------------------------------------|
+| Cart Screen                          | Order Screen                                | Place Order + Pay                            | Branch Locations                           |
+|------------------------------------|---------------------------------------------|----------------------------------------------|--------------------------------------------|
 | ![Cart Empty](assets/images/screenshoot/cart/empty.jpg) ![Cart Filled](assets/images/screenshoot/cart/fill.jpg) | ![Order](assets/images/screenshoot/order/1.jpg) | ![Place Order 1](assets/images/screenshoot/place_order_with_pay/1.jpg) ![Place Order 2](assets/images/screenshoot/place_order_with_pay/2.jpg) ![Place Order 3](assets/images/screenshoot/place_order_with_pay/3.jpg) | ![Google Maps](assets/images/screenshoot/maps/google_map_places.jpg) |
 
-| Language Selector                                      | Notifications                             | Contact Us                                  |
-|--------------------------------------------------------|--------------------------------------------|--------------------------------------------|
-| ![Language TR](assets/images/screenshoot/lang/tra.jpg) ![Language EN](assets/images/screenshoot/lang/eng.jpg) ![Language AR](assets/images/screenshoot/lang/ar.jpg) | ![Notifications](assets/images/screenshoot/notification/notification.jpg) | ![Contact Us](assets/images/screenshoot/contact_us/1.jpg) |
-
+| Language Selector                   | Notifications                              | 
+|-----------------------------------|-------------------------------------------|
+| ![Language TR](assets/images/screenshoot/lang/tra.jpg) ![Language EN](assets/images/screenshoot/lang/eng.jpg) ![Language AR](assets/images/screenshoot/lang/ar.jpg) | ![Notifications](assets/images/screenshoot/notification/notification.jpg) | 
 <!-- update all images -->
 
 ## 📦 Getting Startedzz

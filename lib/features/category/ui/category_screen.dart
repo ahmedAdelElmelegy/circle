@@ -53,7 +53,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                           child: ProductListViewInCategory(
                         catIndex: catInd,
                         catId: catId,
-                      )), // ✅ Wrap with `Expanded`
+                      )), // ✅
                     ],
                   ),
                 ),

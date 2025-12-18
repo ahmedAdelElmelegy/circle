@@ -28,7 +28,7 @@ class CustomButton extends StatelessWidget {
                 isSelect == true ? ColorManger.red : ColorManger.grayLight,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(16.r)),
-            minimumSize: Size(width ?? double.infinity, 53.h)),
+            minimumSize: Size(width ?? double.infinity, 45.h)),
         onPressed: onTap,
         child: child ??
             Text(title ?? '',

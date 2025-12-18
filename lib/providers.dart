@@ -1,25 +1,24 @@
 import 'package:circle/core/di/injection.dart';
-import 'package:circle/data/provider/add_and_remove_provider.dart';
-import 'package:circle/data/provider/calculate_order_cost_provider.dart';
-import 'package:circle/data/provider/cancel_order_provider.dart';
-import 'package:circle/data/provider/category_provider.dart';
-import 'package:circle/data/provider/city_provider.dart';
-import 'package:circle/data/provider/contact_us_provider.dart';
-import 'package:circle/data/provider/favorite_provider.dart';
-import 'package:circle/data/provider/home_provider.dart';
-import 'package:circle/data/provider/latest_product_provider.dart';
-import 'package:circle/data/provider/login_provider.dart';
-import 'package:circle/data/provider/network_services.dart';
-import 'package:circle/data/provider/order_provider.dart';
-import 'package:circle/data/provider/payment_provider.dart';
-import 'package:circle/data/provider/points_provider.dart';
-import 'package:circle/data/provider/product_provider.dart';
-import 'package:circle/data/provider/shared_prefrence_provider.dart';
-import 'package:circle/data/provider/sign_up_provider.dart';
-import 'package:circle/data/provider/slider_provider.dart';
-import 'package:circle/data/provider/store_order_provider.dart';
-import 'package:circle/data/provider/sub_category_provider.dart';
-import 'package:circle/data/provider/update_profile_provider.dart';
+import 'package:circle/features/favorite/presentation/view_model/add_and_remove_product_to_favorite_provider.dart';
+import 'package:circle/features/pay_and_delevary/presentation/view_model/calculate_order_cost_provider.dart';
+import 'package:circle/features/orders/presentation/view_model/cancel_order_provider.dart';
+import 'package:circle/features/home/presentation/view_model/category_provider.dart';
+import 'package:circle/features/sign_up/presentation/view_model/city_provider.dart';
+import 'package:circle/features/contact_us/presentation/view_model/contact_us_provider.dart';
+import 'package:circle/features/favorite/presentation/view_model/favorite_provider.dart';
+import 'package:circle/features/home/presentation/view_model/home_provider.dart';
+import 'package:circle/features/home/presentation/view_model/latest_product_provider.dart';
+import 'package:circle/features/login/presentation/view_model/login_provider.dart';
+import 'package:circle/features/orders/presentation/view_model/order_provider.dart';
+import 'package:circle/features/pay_and_delevary/presentation/view_model/payment_provider.dart';
+import 'package:circle/features/points/presentation/view_model/points_provider.dart';
+import 'package:circle/features/products/presentation/view_model/product_provider.dart';
+import 'package:circle/features/cart/presentation/view_model/shared_prefrence_provider.dart';
+import 'package:circle/features/sign_up/presentation/view_model/sign_up_provider.dart';
+import 'package:circle/features/home/presentation/view_model/slider_provider.dart';
+import 'package:circle/features/orders/presentation/view_model/store_order_provider.dart';
+import 'package:circle/features/category/presentation/view_model/sub_category_provider.dart';
+import 'package:circle/features/settings/presentation/view_model/update_profile_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -56,7 +55,7 @@ class GenerateMultiProvider extends StatelessWidget {
       ChangeNotifierProvider(create: (_) => getIt<SignUpProvider>()),
       ChangeNotifierProvider(create: (_) => getIt<UpdateProfileProvider>()),
       ChangeNotifierProvider(create: (_) => getIt<ContactUsProvider>()),
-      ChangeNotifierProvider(create: (_) => NetworkService()),
+      // ChangeNotifierProvider(create: (_) => NetworkService()),
     ], child: child);
   }
 }

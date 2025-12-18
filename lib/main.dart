@@ -1,5 +1,5 @@
 import 'package:circle/core/di/injection.dart';
-import 'package:circle/data/repository/save_user_data.dart';
+import 'package:circle/features/sign_up/data/repo/save_user_data.dart';
 import 'package:circle/my_app.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';

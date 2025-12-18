@@ -1,16 +1,16 @@
-import 'package:circle/features/about/ui/about_screen.dart';
-import 'package:circle/features/cart/ui/cart_screen.dart';
-import 'package:circle/features/category/ui/category_screen.dart';
-import 'package:circle/features/favorite/ui/favorite_screen.dart';
+import 'package:circle/features/about/presentation/view/screens/about_screen.dart';
+import 'package:circle/features/cart/presentation/view/screens/cart_screen.dart';
+import 'package:circle/features/category/presentation/view/screens/category_screen.dart';
+import 'package:circle/features/favorite/presentation/view/screen/favorite_screen.dart';
 
-import 'package:circle/features/login/ui/login_screen.dart';
+import 'package:circle/features/login/presentation/view/screens/login_screen.dart';
 import 'package:circle/features/main_screen.dart';
-import 'package:circle/features/notifications/ui/notification_screen.dart';
-import 'package:circle/features/orders/ui/orders_screen.dart';
-import 'package:circle/features/points/ui/points_screen.dart';
+import 'package:circle/features/notifications/presentation/view/notification_screen.dart';
+import 'package:circle/features/orders/presentation/view/orders_screen.dart';
+import 'package:circle/features/points/presentation/view/points_screen.dart';
 
-import 'package:circle/features/sign_up/ui/sign_up.dart';
-import 'package:circle/features/splash/ui/splash_screen.dart';
+import 'package:circle/features/sign_up/presentation/view/sign_up.dart';
+import 'package:circle/features/splash/presentation/view/splash_screen.dart';
 import 'package:circle/main.dart';
 import 'package:circle/providers.dart';
 import 'package:easy_localization/easy_localization.dart';

@@ -20,6 +20,8 @@ class Assets {
 class AppIcons {
   static String categoryIcon = 'assets/icons/category_icon.svg';
   static String homeIcon = 'assets/icons/home_icon.svg';
+  static String hellow = 'assets/icons/hellow.svg';
+
   static String mapIcon = 'assets/icons/map_icon.svg';
   static String settingsIcon = 'assets/icons/setting_icon.svg';
   static String pinIcon = 'assets/icons/pin_icon.svg';

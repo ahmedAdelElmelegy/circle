@@ -73,7 +73,7 @@ class _PayScreenState extends State<PayScreen> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.w),
               child: CustomButton(
-                  title: 'send_order'.tr(),
+                  title: 'send_order',
                   onTap: () {
                     storeOrder.storeOrder(
                         StoreOrder(

@@ -111,6 +111,13 @@ class ApiService {
       var response = await _dio.post(
         '$_baseUrl$endpoint',
         data: data,
+        options: Options(
+          headers: {
+            'Content-Type': 'multipart/form-data',
+            'Accept': 'application/json',
+            'Authorization': token
+          },
+        ),
         queryParameters: queryParameters,
         cancelToken: cancelToken,
         onSendProgress: onSendProgress,

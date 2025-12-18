@@ -30,7 +30,7 @@ class PayItem extends StatelessWidget {
               ),
               verticalSpace(4),
               Text(
-                inviceItem.subtitle.tr(),
+                inviceItem.subtitle,
                 maxLines: 1,
                 style: TextStyles.font14MadaRegularBlack,
               ),

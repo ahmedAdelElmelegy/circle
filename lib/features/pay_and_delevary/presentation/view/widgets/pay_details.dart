@@ -4,6 +4,7 @@ import 'package:circle/core/theme/color_manager.dart';
 import 'package:circle/features/pay_and_delevary/data/models/body/pay_model.dart';
 import 'package:circle/features/pay_and_delevary/presentation/view/widgets/pay_item.dart';
 import 'package:circle/features/pay_and_delevary/presentation/view_model/calculate_order_cost_provider.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -27,7 +28,7 @@ class PayDetails extends StatelessWidget {
             PayItem(
               inviceItem: PayModel(
                   title: 'branch',
-                  subtitle: 'menoufia',
+                  subtitle: 'menoufia'.tr(),
                   icon: AppIcons.restBranchIcon),
             ),
             verticalSpace(12),

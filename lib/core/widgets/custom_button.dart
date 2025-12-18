@@ -31,11 +31,10 @@ class CustomButton extends StatelessWidget {
             minimumSize: Size(width ?? double.infinity, 45.h)),
         onPressed: onTap,
         child: child ??
-            Text(title ?? '',
-                    style: isSelect == true
-                        ? TextStyles.font14MadaRegularWith
-                        : TextStyles.font14MadaRegularBlack
-                            .copyWith(color: ColorManger.gray))
-                .tr());
+            Text(tr('$title'),
+                style: isSelect == true
+                    ? TextStyles.font14MadaRegularWith
+                    : TextStyles.font14MadaRegularBlack
+                        .copyWith(color: ColorManger.gray)));
   }
 }

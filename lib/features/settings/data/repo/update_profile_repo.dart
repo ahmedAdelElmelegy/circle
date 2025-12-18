@@ -16,12 +16,15 @@ class UpdateProfileRepo {
       FormData formData = FormData.fromMap({
         "first_name": updateProfile.firstName,
         "last_name": updateProfile.lastName,
-        "image": updateProfile.image == null
-            ? null
-            : await MultipartFile.fromFile(updateProfile.image!.path),
+        // there is an a problem inside this in backend
+        // "image": updateProfile.image == null
+        //     ? null
+        //     : await MultipartFile.fromFile(updateProfile.image!.path),
       });
-      Response response =
-          await apiService.post(AppURL.updateProfile, data: formData);
+      Response response = await apiService.postWithImage(
+        AppURL.updateProfile,
+        data: formData,
+      );
       return ApiResponse.withSuccess(response);
     } catch (e) {
       return ApiResponse.withError(ApiErrorHandler.getMessage(e));

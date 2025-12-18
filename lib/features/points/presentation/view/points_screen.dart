@@ -11,7 +11,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
 class PointsScreen extends StatefulWidget {
-  static const routeName = '/points';
   const PointsScreen({super.key});
 
   @override

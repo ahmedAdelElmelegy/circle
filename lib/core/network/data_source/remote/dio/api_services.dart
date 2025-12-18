@@ -1,11 +1,11 @@
 import 'dart:io';
 import 'package:circle/core/utils/app_constants.dart';
-import 'package:circle/core/network/api_url/api_utls.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ApiService {
-  final String _baseUrl = AppURL.baseUrl;
+  late String _baseUrl;
   final Dio _dio;
   late String token;
   late String lang;
@@ -14,6 +14,12 @@ class ApiService {
   ApiService(this._dio, this.sharedPreferences) {
     token = sharedPreferences.getString(AppConstants.userTOKEN) ?? "";
     lang = sharedPreferences.getString(AppConstants.lang) ?? "ar";
+    _baseUrl = dotenv.env['BASE_URL'] ?? '';
+
+    if (_baseUrl.isEmpty) {
+      throw Exception('BASE_URL is not defined in .env');
+    }
+
     _dio
       ..options.baseUrl = _baseUrl
       ..httpClientAdapter

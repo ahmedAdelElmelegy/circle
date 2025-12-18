@@ -7,12 +7,12 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class SettingItem extends StatelessWidget {
+class SettingActionItem extends StatelessWidget {
   // final String text;
   // final String icon;
   // final VoidCallback? onTap;
   final SettingModel settingData;
-  const SettingItem({super.key, required this.settingData});
+  const SettingActionItem({super.key, required this.settingData});
 
   @override
   Widget build(BuildContext context) {

@@ -3,7 +3,6 @@ import 'package:circle/features/notifications/presentation/view/widgets/notifica
 import 'package:flutter/material.dart';
 
 class NotificationScreen extends StatelessWidget {
-  static const String routeName = '/notifications';
   const NotificationScreen({super.key});
 
   @override

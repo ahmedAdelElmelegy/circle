@@ -25,11 +25,11 @@ class SignUpProvider with ChangeNotifier {
   final lastNameKey = GlobalKey<FormState>();
   final cityKey = GlobalKey<FormState>();
   final invityCodeKey = GlobalKey<FormState>();
-  TextEditingController phone = TextEditingController();
-  TextEditingController firstName = TextEditingController();
-  TextEditingController lastName = TextEditingController();
+  late TextEditingController phone;
+  late TextEditingController firstName;
+  late TextEditingController lastName;
 
-  TextEditingController inviteCode = TextEditingController();
+  late TextEditingController inviteCode;
   Future<ApiResponse> signUp(SignupResponseBody responseBody) async {
     isLoading = true;
     notifyListeners();

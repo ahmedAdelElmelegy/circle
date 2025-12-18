@@ -26,7 +26,7 @@ class SettingWidget extends StatelessWidget {
             style: TextStyles.font12MadaRegularGray,
           ),
           verticalSpace(16),
-          const SettingListView(),
+          const SettingActionListView(),
           DeleteAccountItem(
             onPressed: () {},
           )

@@ -8,7 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SettingScreen extends StatelessWidget {
-  static const routeName = '/settings';
   const SettingScreen({super.key});
 
   @override

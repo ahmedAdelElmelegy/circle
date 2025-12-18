@@ -16,7 +16,6 @@ import 'package:provider/provider.dart';
 class ProductScreen extends StatefulWidget {
   final int? index;
   final int? subIndex;
-  static const routeName = '/product-screen';
   const ProductScreen({super.key, this.index, this.subIndex});
 
   @override

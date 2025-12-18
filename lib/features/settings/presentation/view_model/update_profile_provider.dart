@@ -1,4 +1,5 @@
 import 'package:circle/core/error/failure.dart';
+import 'package:circle/core/helpers/extention.dart';
 import 'package:circle/core/network/models/body/update_profile_request_body.dart';
 import 'package:circle/features/login/data/models/response/auth_model/auth_model.dart';
 import 'package:circle/core/network/models/response/base/api_response.dart';
@@ -30,10 +31,10 @@ class UpdateProfileProvider with ChangeNotifier {
       authModel = AuthModel.fromJson(apiResponse.response!.data);
       if (authModel!.code == 200) {
         saveUserData.saveUserData(authModel!);
-        saveUserData.saveUserToken(authModel!.data!.auth!.token!);
         saveUserData.getUserData();
 
         Fluttertoast.showToast(msg: 'update_profile_success'.tr());
+        pop();
       } else if (authModel!.code == 422) {
         Fluttertoast.showToast(msg: apiResponse.response!.data['message']);
       }

@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:circle/core/helpers/extention.dart';
 import 'package:circle/features/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
@@ -15,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     Timer(const Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(context, MainScreen.routeName);
+      pushReplacement(const MainScreen());
     });
     super.initState();
   }

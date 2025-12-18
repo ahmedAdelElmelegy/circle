@@ -17,7 +17,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
 class PayScreen extends StatefulWidget {
-  static const String routeName = 'InvoiceDetailesScreen';
   const PayScreen({super.key});
 
   @override

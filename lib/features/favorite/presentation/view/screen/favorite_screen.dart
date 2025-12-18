@@ -4,7 +4,6 @@ import 'package:circle/features/favorite/presentation/view/widgets/favorite_prod
 import 'package:flutter/material.dart';
 
 class FavoriteScreen extends StatelessWidget {
-  static const routeName = '/favorite';
   const FavoriteScreen({super.key});
 
   @override

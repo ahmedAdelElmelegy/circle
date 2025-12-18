@@ -16,7 +16,6 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
 
 class CartScreen extends StatefulWidget {
-  static const String routeName = '/cart';
   const CartScreen({super.key});
 
   @override

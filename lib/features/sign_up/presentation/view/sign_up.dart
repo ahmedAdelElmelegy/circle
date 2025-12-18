@@ -23,7 +23,7 @@ import 'package:provider/provider.dart';
 
 class SignUp extends StatefulWidget {
   final bool? isEdit;
-  static const String routeName = '/sign_up';
+
   const SignUp({super.key, this.isEdit = false});
 
   @override
@@ -33,6 +33,26 @@ class SignUp extends StatefulWidget {
 class _SignUpState extends State<SignUp> {
   int cityId = 0;
   File? currentImage;
+  late SignUpProvider signupProvider;
+  @override
+  void initState() {
+    super.initState();
+    signupProvider = context.read<SignUpProvider>();
+    signupProvider.firstName = TextEditingController();
+    signupProvider.lastName = TextEditingController();
+    signupProvider.phone = TextEditingController();
+    signupProvider.inviteCode = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    signupProvider.firstName.dispose();
+    signupProvider.lastName.dispose();
+    signupProvider.phone.dispose();
+    signupProvider.inviteCode.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

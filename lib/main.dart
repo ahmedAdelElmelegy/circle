@@ -4,12 +4,15 @@ import 'package:circle/my_app.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 GlobalKey<NavigatorState> navigator = GlobalKey<NavigatorState>();
 SaveUserData saveUserData = getIt();
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: ".env");
+
   await EasyLocalization.ensureInitialized();
   await ScreenUtil.ensureScreenSize();
 
@@ -33,8 +36,7 @@ void main() async {
           Locale('en', 'US'),
           Locale('ar', 'EG'),
         ],
-        path:
-            'assets/translations', // <-- change the path of the translation files
+        path: 'assets/translations',
         fallbackLocale: const Locale('ar', 'EG'),
         startLocale: const Locale('ar', 'EG'),
         child: const MyApp()),

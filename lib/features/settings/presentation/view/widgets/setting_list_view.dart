@@ -12,8 +12,8 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-class SettingListView extends StatelessWidget {
-  const SettingListView({
+class SettingActionListView extends StatelessWidget {
+  const SettingActionListView({
     super.key,
   });
 
@@ -53,7 +53,7 @@ class SettingListView extends StatelessWidget {
     return Column(
       children: List.generate(
           settingData.length,
-          (index) => SettingItem(
+          (index) => SettingActionItem(
                 settingData: settingData[index],
               )),
     );

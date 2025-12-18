@@ -21,15 +21,18 @@ class LoginForm extends StatefulWidget {
 }
 
 class _LoginFormState extends State<LoginForm> {
+  late LoginProvider loginProvider;
+
   @override
   void initState() {
-    context.read<LoginProvider>().phone = TextEditingController();
     super.initState();
+    loginProvider = context.read<LoginProvider>();
+    loginProvider.phone = TextEditingController();
   }
 
   @override
   void dispose() {
-    context.read<LoginProvider>().phone.dispose();
+    loginProvider.phone.dispose();
     super.dispose();
   }
 
@@ -47,7 +50,7 @@ class _LoginFormState extends State<LoginForm> {
               }
             },
             formKey: provider.formKey,
-            hintText: 'phone_number'.tr(),
+            hintText: 'phone_number',
             controller: provider.phone,
             fillColor: false,
             icon: Padding(
@@ -58,8 +61,12 @@ class _LoginFormState extends State<LoginForm> {
           verticalSpace(24),
           CustomButton(
               child: provider.isLoading
-                  ? const CircularProgressIndicator(
-                      color: Colors.white,
+                  ? const SizedBox(
+                      width: 30,
+                      height: 30,
+                      child: CircularProgressIndicator(
+                        color: Colors.white,
+                      ),
                     )
                   : Text(
                       'in'.tr(),

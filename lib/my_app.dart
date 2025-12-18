@@ -1,15 +1,3 @@
-import 'package:circle/features/about/presentation/view/screens/about_screen.dart';
-import 'package:circle/features/cart/presentation/view/screens/cart_screen.dart';
-import 'package:circle/features/category/presentation/view/screens/category_screen.dart';
-import 'package:circle/features/favorite/presentation/view/screen/favorite_screen.dart';
-
-import 'package:circle/features/login/presentation/view/screens/login_screen.dart';
-import 'package:circle/features/main_screen.dart';
-import 'package:circle/features/notifications/presentation/view/notification_screen.dart';
-import 'package:circle/features/orders/presentation/view/orders_screen.dart';
-import 'package:circle/features/points/presentation/view/points_screen.dart';
-
-import 'package:circle/features/sign_up/presentation/view/sign_up.dart';
 import 'package:circle/features/splash/presentation/view/splash_screen.dart';
 import 'package:circle/main.dart';
 import 'package:circle/providers.dart';
@@ -34,22 +22,6 @@ class MyApp extends StatelessWidget {
                 navigatorKey: navigator,
                 title: 'Circle App',
                 home: const SplashScreen(),
-                routes: {
-                  MainScreen.routeName: (context) => const MainScreen(),
-                  CategoryScreen.routeName: (context) => const CategoryScreen(),
-                  // ProductScreen.routeName: (context) => const ProductScreen(),
-                  NotificationScreen.routeName: (context) =>
-                      const NotificationScreen(),
-                  CartScreen.routeName: (context) => const CartScreen(),
-
-                  OrdersScreen.routeName: (context) => const OrdersScreen(),
-                  FavoriteScreen.routeName: (context) => const FavoriteScreen(),
-                  PointsScreen.routeName: (context) => const PointsScreen(),
-
-                  AboutScreen.routeName: (context) => const AboutScreen(),
-                  LoginScreen.routeName: (context) => const LoginScreen(),
-                  SignUp.routeName: (context) => const SignUp(),
-                },
               )),
     );
   }

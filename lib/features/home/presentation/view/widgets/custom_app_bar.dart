@@ -1,5 +1,6 @@
 import 'package:circle/core/di/injection.dart';
 import 'package:circle/core/helpers/constants.dart';
+import 'package:circle/core/helpers/extention.dart';
 import 'package:circle/core/helpers/spacing.dart';
 import 'package:circle/core/theme/styles.dart';
 import 'package:circle/core/widgets/svg_icon.dart';
@@ -54,7 +55,7 @@ class CustomAppBar extends StatelessWidget {
               const Spacer(),
               GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, NotificationScreen.routeName);
+                  push(const NotificationScreen());
                 },
                 child: AppBarIcon(
                   text: 0,
@@ -64,7 +65,7 @@ class CustomAppBar extends StatelessWidget {
               horizontalSpace(8),
               GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, CartScreen.routeName);
+                  push(const CartScreen());
                 },
                 child: AppBarIcon(
                   text: sharedProvider.cartItems.length,

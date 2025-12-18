@@ -20,7 +20,6 @@ CategoryProvider categoryProvider = getIt();
 LatestProductProvider latestProductProvider = getIt();
 
 class HomeScreen extends StatelessWidget {
-  static const String routeName = '/home';
   const HomeScreen({super.key});
 
   @override

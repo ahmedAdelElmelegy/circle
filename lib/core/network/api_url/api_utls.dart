@@ -1,5 +1,5 @@
 class AppURL {
-  static const String baseUrl = 'https://ecommerce.project-nami.xyz/api/';
+  // static const String baseUrl = 'https://ecommerce.project-nami.xyz/api/';
   static const String slider = 'user/home/slider';
   static const String category = 'user/home/categories';
   static const String subCategory = 'user/home/sub-categories';

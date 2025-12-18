@@ -20,7 +20,6 @@ import 'package:provider/provider.dart';
 class PayAndDelevaryScreen extends StatelessWidget {
   final double totalPrice;
   final SharedPrefrenceProvider sharedProvider;
-  static const String routeName = '/invoice';
   const PayAndDelevaryScreen({
     super.key,
     required this.totalPrice,

@@ -3,6 +3,7 @@
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -40,8 +41,10 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDRNWkP8QuMD7811wt5oLy2_bwP1F11adQ',
+  static String apiKey = dotenv.env['ApiKey'] ?? '';
+
+  static FirebaseOptions web = FirebaseOptions(
+    apiKey: apiKey,
     appId: '1:790743877683:web:ad9630ef08c9f2e0877b46',
     messagingSenderId: '790743877683',
     projectId: 'circle-b3f90',
@@ -50,36 +53,38 @@ class DefaultFirebaseOptions {
     measurementId: 'G-WDGP8D7970',
   );
 
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyClGYgTZXA6WJZYzICb4Yv_nWj3NC0FubE',
+  static FirebaseOptions android = FirebaseOptions(
+    apiKey: apiKey,
     appId: '1:790743877683:android:7f6296c910cdbf9e877b46',
     messagingSenderId: '790743877683',
     projectId: 'circle-b3f90',
     storageBucket: 'circle-b3f90.firebasestorage.app',
   );
 
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyASthkIpPxhpk3O8X04ZIGesLdIFkvT3HY',
+  static FirebaseOptions ios = FirebaseOptions(
+    apiKey: apiKey,
     appId: '1:790743877683:ios:f46c72f4c0804e49877b46',
     messagingSenderId: '790743877683',
     projectId: 'circle-b3f90',
     storageBucket: 'circle-b3f90.firebasestorage.app',
-    androidClientId: '790743877683-eul17b8eu86ps0k9ljhe4p87ulr19sqc.apps.googleusercontent.com',
+    androidClientId:
+        '790743877683-eul17b8eu86ps0k9ljhe4p87ulr19sqc.apps.googleusercontent.com',
     iosBundleId: 'com.example.circle',
   );
 
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyASthkIpPxhpk3O8X04ZIGesLdIFkvT3HY',
+  static FirebaseOptions macos = FirebaseOptions(
+    apiKey: apiKey,
     appId: '1:790743877683:ios:f46c72f4c0804e49877b46',
     messagingSenderId: '790743877683',
     projectId: 'circle-b3f90',
     storageBucket: 'circle-b3f90.firebasestorage.app',
-    androidClientId: '790743877683-eul17b8eu86ps0k9ljhe4p87ulr19sqc.apps.googleusercontent.com',
+    androidClientId:
+        '790743877683-eul17b8eu86ps0k9ljhe4p87ulr19sqc.apps.googleusercontent.com',
     iosBundleId: 'com.example.circle',
   );
 
-  static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyDRNWkP8QuMD7811wt5oLy2_bwP1F11adQ',
+  static FirebaseOptions windows = FirebaseOptions(
+    apiKey: apiKey,
     appId: '1:790743877683:web:1c270e87f3bf197b877b46',
     messagingSenderId: '790743877683',
     projectId: 'circle-b3f90',

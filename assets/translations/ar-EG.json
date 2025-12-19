@@ -151,5 +151,8 @@
 "cart_is_empty":"عربة التسوق فارغة",
 "looks_like_you_dont_have_anything_in_your_cart":"يبدو ان ليس لديك اي شيء في عربة التسوق",
 "looks_like_you_dont_have_anything_in_your_favorite":"يبدو ان ليس لديك اي شيء في المفضلة",
-"favorite_is_empty":"المفضلة فارغة"
+"favorite_is_empty":"المفضلة فارغة",
+"no_internet_connection":"لا يوجد اتصال بالانترنت",
+"try_again":"حاول مرة اخري"
+
 }

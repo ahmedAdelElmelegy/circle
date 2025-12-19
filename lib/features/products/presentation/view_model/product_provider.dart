@@ -10,6 +10,7 @@ class ProductProvider with ChangeNotifier {
   bool isFailure = false;
   ServerFailure? serverFailure;
   ProductRepo productRepo;
+
   ProductModel? productModel;
   List<ProductModelData> productList = [];
 

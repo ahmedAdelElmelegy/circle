@@ -15,6 +15,7 @@ class Assets {
   static String logoInit = 'assets/images/Logo_init.png';
   static String emptyCart = 'assets/images/empty_cart.png';
   static String emptyFavrite = 'assets/images/empty_favorite.png';
+  static String opps = 'assets/images/opps.png';
 }
 
 class AppIcons {

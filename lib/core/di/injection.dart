@@ -1,6 +1,7 @@
 import 'package:circle/core/utils/dio_factory.dart';
 import 'package:circle/core/network/data_source/remote/dio/api_services.dart';
 import 'package:circle/features/favorite/presentation/view_model/add_and_remove_product_to_favorite_provider.dart';
+import 'package:circle/features/home/presentation/view_model/home_provider.dart';
 import 'package:circle/features/pay_and_delevary/presentation/view_model/calculate_order_cost_provider.dart';
 import 'package:circle/features/orders/presentation/view_model/cancel_order_provider.dart';
 import 'package:circle/features/home/presentation/view_model/category_provider.dart';
@@ -73,14 +74,16 @@ Future<void> init() async {
       () => UpdateProfileRepo(getIt()));
   getIt.registerLazySingleton<ContactUsRepo>(() => ContactUsRepo(getIt()));
   // providers
-  getIt
-      .registerLazySingleton<CategoryProvider>(() => CategoryProvider(getIt()));
+  getIt.registerLazySingleton<CategoryProvider>(
+      () => CategoryProvider(getIt(), getIt(), getIt()));
   getIt.registerLazySingleton<SubCategoryProvider>(
       () => SubCategoryProvider(getIt()));
   getIt.registerLazySingleton<SliderProvider>(() => SliderProvider(getIt()));
   getIt.registerLazySingleton<LatestProductProvider>(
       () => LatestProductProvider(getIt()));
-  getIt.registerLazySingleton<ProductProvider>(() => ProductProvider(getIt()));
+  getIt.registerLazySingleton<ProductProvider>(() => ProductProvider(
+        getIt(),
+      ));
   getIt.registerLazySingleton<SharedPrefrenceProvider>(
       () => SharedPrefrenceProvider());
   getIt.registerLazySingleton<LoginProvider>(
@@ -105,4 +108,6 @@ Future<void> init() async {
       () => UpdateProfileProvider(getIt(), getIt()));
   getIt.registerLazySingleton<ContactUsProvider>(
       () => ContactUsProvider(getIt()));
+  getIt.registerLazySingleton<HomeProvider>(
+      () => HomeProvider(getIt(), getIt(), getIt()));
 }

@@ -16,7 +16,7 @@ class LatestProductRepo {
 
       return ApiResponse.withSuccess(response);
     } catch (e) {
-      return ApiResponse.withError(ApiErrorHandler.getMessage(e));
+      return ApiResponse.withError(ApiError2Handler.handleError(e));
     }
   }
 }

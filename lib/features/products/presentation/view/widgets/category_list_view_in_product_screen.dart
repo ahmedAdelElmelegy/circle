@@ -36,8 +36,7 @@ class _CategoryListViewInProductScreenState
       height: 56.h,
       child: Consumer<CategoryProvider>(builder: (context, provider, child) {
         if (provider.isFailure) {
-          return CustomErrorWidget(
-              errMessage: provider.serverFailure!.errMessage);
+          return CustomErrorWidget(errMessage: provider.serverFailure!.message);
         }
         return ListView.builder(
             scrollDirection: Axis.horizontal,

@@ -149,5 +149,7 @@
   "cart_is_empty": "Shopping cart is empty",
   "looks_like_you_dont_have_anything_in_your_cart": "Looks like you don't have anything in your cart",
   "looks_like_you_dont_have_anything_in_your_favorite": "Looks like you don't have anything in your favorites",
-  "favorite_is_empty": "Favorites is empty"
+  "favorite_is_empty": "Favorites is empty",
+   "no_internet_connection":"No internet connection"
+   ,  "try_again":"Try again"
 }

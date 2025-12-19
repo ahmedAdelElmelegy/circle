@@ -1,4 +1,4 @@
-import 'package:circle/core/error/failure.dart';
+import 'package:circle/core/network/data_source/remote/exception/app_exeptions.dart';
 import 'package:circle/core/network/models/response/base/api_response.dart';
 import 'package:circle/features/home/data/model/response/slider_model/slider.dart';
 import 'package:circle/features/home/data/model/response/slider_model/slider_model.dart';
@@ -9,16 +9,21 @@ import 'package:flutter/material.dart';
 
 class SliderProvider extends ChangeNotifier {
   bool isLoading = false;
-  bool isFailure = false;
+  // bool isFailure = false;
   SliderModel? sliderModel;
+  AppException? _error;
+  AppException? get error => _error;
+
+  bool get hasError => _error != null;
+
   SliderRepo sliderRepo;
   SliderProvider(this.sliderRepo);
-  ServerFailure? serverFailure;
   int notificationCount = 0;
   List<SSlider> sliderList = [];
 
   Future<ApiResponse> getSlider() async {
     isLoading = true;
+    _error = null;
     notifyListeners();
 
     ApiResponse apiResponse = await sliderRepo.getSlider();
@@ -28,15 +33,15 @@ class SliderProvider extends ChangeNotifier {
         apiResponse.response!.data != null) {
       sliderModel = SliderModel.fromJson(apiResponse.response!.data);
       if (sliderModel!.code == 200) {
+        sliderList.clear();
         sliderList.addAll(sliderModel!.data!.slider!);
         notificationCount = sliderModel!.data!.notificationCount!;
       }
     } else {
-      isFailure = true;
       if (apiResponse.error is DioException) {
-        serverFailure = ServerFailure.fromDioError(apiResponse.error);
+        _error = apiResponse.error;
       } else {
-        serverFailure = ServerFailure(apiResponse.error.toString());
+        _error = apiResponse.error;
       }
       notifyListeners();
     }
@@ -45,4 +50,9 @@ class SliderProvider extends ChangeNotifier {
     notifyListeners();
     return apiResponse;
   }
+
+  bool get isNetworkError => _error is NetworkException;
+  bool get isAuthError => _error is AuthenticationException;
+  bool get isServerError => _error is ServerException;
+  Future<void> retry() => getSlider();
 }

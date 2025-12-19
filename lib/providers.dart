@@ -29,7 +29,8 @@ class GenerateMultiProvider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(providers: [
-      ChangeNotifierProvider(create: (_) => HomeProvider()),
+      ChangeNotifierProvider(
+          create: (_) => getIt<HomeProvider>()..getHomeData()),
       ChangeNotifierProvider(create: (_) => getIt<OrderProvider>()),
       ChangeNotifierProvider(
           create: (_) => getIt<CategoryProvider>()..getCategory()),

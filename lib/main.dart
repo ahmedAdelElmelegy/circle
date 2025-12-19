@@ -10,7 +10,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 GlobalKey<NavigatorState> navigator = GlobalKey<NavigatorState>();
 SaveUserData saveUserData = getIt();
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+  // WidgetsFlutterBinding.ensureInitialized();
+  // ErrorWidget.builder = (FlutterErrorDetails details) {
+  //   return Material(
+  //       child: CustomErrorWidget(errMessage: details.exception.toString()));
+  // };
+
   await dotenv.load(fileName: ".env");
 
   await EasyLocalization.ensureInitialized();
@@ -41,5 +46,4 @@ void main() async {
         startLocale: const Locale('ar', 'EG'),
         child: const MyApp()),
   );
-  // ui finished loading
 }

@@ -1,8 +1,8 @@
 import 'package:circle/core/helpers/extention.dart';
-import 'package:circle/core/widgets/custom_error_widget.dart';
 import 'package:circle/core/widgets/loading_widget.dart';
 import 'package:circle/features/category/presentation/view_model/sub_category_provider.dart';
 import 'package:circle/features/category/presentation/view/widgets/product_item_in_category.dart';
+import 'package:circle/features/home/presentation/view_model/category_provider.dart';
 import 'package:circle/features/products/presentation/view/product_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -43,33 +43,26 @@ class _ProductListViewInCategoryState extends State<ProductListViewInCategory> {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<SubCategoryProvider>(builder: (context, provider, child) {
-      if (provider.isFailure) {
-        return CustomErrorWidget(
-            errMessage: provider.serverFailure!.errMessage);
-      }
+    final provider = Provider.of<CategoryProvider>(context);
 
-      if (provider.subCategoryList.isEmpty) {
-        return LoadingWidget(height: 50.h);
-      }
-
-      return Padding(
-        padding: EdgeInsets.only(right: 16.w, top: 12.h, bottom: 12.h),
-        child: ListView.builder(
-            itemBuilder: (context, index) => GestureDetector(
-                  onTap: () {
-                    push(ProductScreen(
-                      index: widget.catIndex,
-                      subIndex: index,
-                    ));
-                  },
-                  child: ProductItemInCategory(
-                    title: provider.subCategoryList[index].title!,
+    return Padding(
+      padding: EdgeInsets.only(right: 16.w, top: 12.h, bottom: 12.h),
+      child: provider.isLoading
+          ? LoadingWidget(height: 50.h)
+          : ListView.builder(
+              itemBuilder: (context, index) => GestureDetector(
+                    onTap: () {
+                      push(ProductScreen(
+                        index: widget.catIndex,
+                        subIndex: index,
+                      ));
+                    },
+                    child: ProductItemInCategory(
+                      title: provider.subCategoryList[index].title!,
+                    ),
                   ),
-                ),
-            itemCount:
-                provider.isLoading ? 2 : provider.subCategoryList.length),
-      );
-    });
+              itemCount:
+                  provider.isLoading ? 2 : provider.subCategoryList.length),
+    );
   }
 }

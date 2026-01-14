@@ -34,7 +34,7 @@ void main() async {
   ]);
 
   // initgit push origin --delete master
-  init();
+  await init();
   runApp(
     EasyLocalization(
         supportedLocales: const [

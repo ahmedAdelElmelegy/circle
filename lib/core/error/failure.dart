@@ -1,64 +1,71 @@
 import 'package:dio/dio.dart';
 
 abstract class Failure {
-  String errMessage;
+  final String errMessage;
 
-  Failure(this.errMessage);
+  const Failure(this.errMessage);
 }
 
 class ServerFailure extends Failure {
-  ServerFailure(super.errMessage);
+  const ServerFailure(super.errMessage);
 
   factory ServerFailure.fromDioError(DioException dioError) {
     switch (dioError.type) {
       case DioExceptionType.connectionTimeout:
-        return ServerFailure('Connection timeout');
+        return const ServerFailure('Connection timeout with ApiServer');
       case DioExceptionType.sendTimeout:
-        return ServerFailure('Send timeout');
+        return const ServerFailure('Send timeout with ApiServer');
       case DioExceptionType.receiveTimeout:
-        return ServerFailure('Receive timeout');
+        return const ServerFailure('Receive timeout with ApiServer');
       case DioExceptionType.badCertificate:
-        return ServerFailure('Bad certificate');
+        return const ServerFailure('Bad Certificate');
       case DioExceptionType.badResponse:
-        final statusCode = dioError.response?.statusCode ?? 0;
-        final data = dioError.response?.data;
-        return ServerFailure.fromCode(statusCode, data);
+        return ServerFailure.fromResponse(
+          dioError.response?.statusCode,
+          dioError.response?.data,
+        );
       case DioExceptionType.cancel:
-        return ServerFailure('Request was cancelled');
+        return const ServerFailure('Request to ApiServer was canceled');
       case DioExceptionType.connectionError:
-        return ServerFailure(
-            'Failed to connect. Please check your internet connection.');
+        return const ServerFailure('No Internet Connection');
       case DioExceptionType.unknown:
-        if (dioError.message?.contains('SocketException') ?? false) {
-          return ServerFailure('No Internet connection');
-        }
-        return ServerFailure(dioError.message ?? 'Unknown error occurred');
-      // ignore: unreachable_switch_default
+        return const ServerFailure('Unexpected Error, Please try again!');
       default:
-        return ServerFailure(dioError.message ?? 'Unexpected error');
+        return const ServerFailure('Opps There was an Error, Please try again');
     }
   }
 
-  factory ServerFailure.fromCode(int code, dynamic response) {
-    try {
-      final message = response is Map && response['message'] is String
-          ? response['message']
-          : 'Something went wrong';
-
-      switch (code) {
-        case 400:
-        case 401:
-        case 403:
-          return ServerFailure(message);
-        case 404:
-          return ServerFailure('The requested resource was not found');
-        case 500:
-          return ServerFailure('Internal server error');
-        default:
-          return ServerFailure('Unexpected server response ($code)');
+  factory ServerFailure.fromResponse(int? statusCode, dynamic response) {
+    String message = 'Opps There was an Error, Please try again';
+    
+    if (response != null && response is Map) {
+      if (response['error'] != null && response['error']['message'] != null) {
+        message = response['error']['message'];
+      } else if (response['message'] != null) {
+        message = response['message'];
       }
-    } catch (_) {
-      return ServerFailure('Unexpected error occurred');
+    }
+
+    if (statusCode == 400 || statusCode == 401 || statusCode == 403) {
+      return ServerFailure(message);
+    } else if (statusCode == 404) {
+      return const ServerFailure('Your request not found, Please try later!');
+    } else if (statusCode == 500) {
+      return const ServerFailure('Internal Server error, Please try later');
+    } else {
+      return ServerFailure(message);
     }
   }
+}
+
+class NetworkFailure extends Failure {
+  const NetworkFailure(super.errMessage);
+}
+
+class ParsingFailure extends Failure {
+  const ParsingFailure(super.errMessage);
+}
+
+class UnexpectedFailure extends Failure {
+  const UnexpectedFailure([String? message]) : super(message ?? 'An unexpected error occurred');
 }

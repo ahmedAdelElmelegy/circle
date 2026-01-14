@@ -1,7 +1,6 @@
 import 'package:circle/core/widgets/custom_error_widget.dart';
 import 'package:circle/core/widgets/loading_widget.dart';
 import 'package:circle/features/category/presentation/view_model/sub_category_provider.dart';
-import 'package:circle/features/home/presentation/view_model/category_provider.dart';
 import 'package:circle/features/products/presentation/view/widgets/item_of_category_product.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -49,7 +48,6 @@ class _ListOfCategoryItemState extends State<ListOfCategoryItem> {
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<CategoryProvider>(context);
     return SizedBox(
       height: 56.h,
       child: Consumer<SubCategoryProvider>(builder: (context, provider, child) {

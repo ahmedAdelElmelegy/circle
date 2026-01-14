@@ -1,6 +1,4 @@
-import 'package:circle/core/network/network_info.dart';
 import 'package:circle/core/utils/dio_factory.dart';
-import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:circle/core/network/data_source/remote/dio/api_services.dart';
 import 'package:circle/features/favorite/presentation/view_model/add_and_remove_product_to_favorite_provider.dart';
 import 'package:circle/features/home/presentation/view_model/home_provider.dart';
@@ -41,7 +39,6 @@ import 'package:circle/features/home/data/repo/slider_repo.dart';
 import 'package:circle/features/orders/data/repo/store_order_repo.dart';
 import 'package:circle/features/category/data/repo/sub_category_repo.dart';
 import 'package:circle/features/settings/data/repo/update_profile_repo.dart';
-import 'package:circle/features/home/logic/task_provider.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -49,11 +46,6 @@ final getIt = GetIt.instance;
 Future<void> init() async {
   final dio = DioFactory.getDio();
   getIt.registerLazySingleton(() => dio);
-  
-  // Network Info
-  getIt.registerLazySingleton(() => Connectivity());
-  getIt.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl(getIt()));
-
   SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
   getIt.registerLazySingleton(() => sharedPreferences);
   getIt.registerLazySingleton(() => ApiService(getIt(), getIt()));
@@ -118,5 +110,4 @@ Future<void> init() async {
       () => ContactUsProvider(getIt()));
   getIt.registerLazySingleton<HomeProvider>(
       () => HomeProvider(getIt(), getIt(), getIt()));
-  getIt.registerLazySingleton<TaskProvider>(() => TaskProvider());
 }

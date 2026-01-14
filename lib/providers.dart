@@ -1,5 +1,3 @@
-import 'package:circle/core/network/network_provider.dart';
-import 'package:circle/features/home/logic/task_provider.dart';
 import 'package:circle/core/di/injection.dart';
 import 'package:circle/features/favorite/presentation/view_model/add_and_remove_product_to_favorite_provider.dart';
 import 'package:circle/features/pay_and_delevary/presentation/view_model/calculate_order_cost_provider.dart';
@@ -58,12 +56,7 @@ class GenerateMultiProvider extends StatelessWidget {
       ChangeNotifierProvider(create: (_) => getIt<SignUpProvider>()),
       ChangeNotifierProvider(create: (_) => getIt<UpdateProfileProvider>()),
       ChangeNotifierProvider(create: (_) => getIt<ContactUsProvider>()),
-      ChangeNotifierProvider(
-        create: (_) => NetworkProvider(networkInfo: getIt()),
-      ),
-      ChangeNotifierProvider(
-        create: (_) => getIt<TaskProvider>()..fetchTasks(),
-      ),
+      // ChangeNotifierProvider(create: (_) => NetworkService()),
     ], child: child);
   }
 }

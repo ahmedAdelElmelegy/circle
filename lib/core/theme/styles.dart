@@ -65,16 +65,6 @@ abstract class TextStyles {
     color: ColorManger.black,
     fontFamily: 'Mada-SemiBold',
   );
-  static TextStyle font18MadaRegularBlack = TextStyle(
-    fontSize: 18.sp,
-    color: ColorManger.black,
-    fontFamily: 'Mada-Regular',
-  );
-  static TextStyle font24MadaSemiBoldBlack = TextStyle(
-    fontSize: 24.sp,
-    color: ColorManger.black,
-    fontFamily: 'Mada-SemiBold',
-  );
   static TextStyle font24MadaSemiBoldRed = TextStyle(
     fontSize: 24.sp,
     color: ColorManger.red,
@@ -90,10 +80,5 @@ abstract class TextStyles {
     color: ColorManger.white,
     fontWeight: FontWeight.w400,
     fontFamily: 'Mada-Regular',
-  );
-  static TextStyle font14MadaSemiBoldWhite = TextStyle(
-    fontSize: 14.sp,
-    color: ColorManger.white,
-    fontFamily: 'Mada-SemiBold',
   );
 }
